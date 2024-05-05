@@ -1,0 +1,28 @@
+#MODULE 13
+#TEST TEST 13 - A játékos átállítja egy pumpa be-, és kimenetét.
+
+gmcd logloc test/logs/test13.log
+loadlog log test/logs/test13.log
+
+crt Pipe pipe1
+crt Pipe pipe2
+crt Pipe pipe3
+crt Pump pump
+crt Saboteur player pump
+call pipe1 connectTo pump
+call pipe2 connectTo pump
+call pipe3 connectTo pump
+call pump setInput pipe1
+call pump setOutput pipe2
+call pump addNeighbourField pipe3
+addplayer player
+actplayer player
+
+gmcd change 1 2
+
+text siker INFO  - SIKERES pumpaátállítás
+number n1 1
+?occur log siker n1
+
+#END
+#END

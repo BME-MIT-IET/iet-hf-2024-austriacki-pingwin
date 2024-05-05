@@ -1,0 +1,48 @@
+#MODULE 34
+#TEST TEST 34 - A pumpa vizet nyom a kimenetére, de a következő pumpába nem fér bele, így a víz a csőben marad.
+
+gmcd logloc test/logs/test34.log
+loadlog log test/logs/test34.log
+
+crt WaterSource ws
+crt Pipe fillPipe
+crt Pump pump1
+crt Pipe pipe
+crt Pump pump2
+call ws addNeighbourField fillPipe
+call fillPipe connectTo pump1
+call pump1 setInput fillPipe
+call pipe connectTo pump1
+call pump1 setOutput pipe
+call pipe connectTo pump2
+call pump2 setInput pipe
+
+gmcd state
+choice bool false
+testhelper bool
+
+call ws step
+call pump1 step
+call pump1 step
+call ws step
+call pump1 step
+call pump1 step
+call ws step
+call pump1 step
+call pump1 step
+call ws step
+call pump1 step
+call pump1 step
+call ws step
+call pump1 step
+call pump1 step
+call ws step
+call pump1 step
+call pump1 step
+
+text txt 1 mennyíségű víz nem fért bele a pumpába
+number n1 1
+?occur log txt n1
+
+#END
+#END

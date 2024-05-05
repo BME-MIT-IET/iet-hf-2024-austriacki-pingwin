@@ -1,0 +1,7 @@
+2023-05-17 10:22:42.337 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:42.339 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:42.340 [Pump.setOutput:181] DEBUG - Cső beállítása outputként: ID: "model.fields.Pipe@2e32ccc5"
+2023-05-17 10:22:42.340 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.340 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.340 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.340 [Pump.step:125] DEBUG - Üres a tartály!

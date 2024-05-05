@@ -1,0 +1,142 @@
+2023-05-17 10:22:42.209 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:42.211 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:42.212 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:42.212 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@7f284218"
+2023-05-17 10:22:42.212 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@407a7f2a" -hez
+2023-05-17 10:22:42.212 [Pump.setInput:168] DEBUG - Cső beállítása inputként: ID: "model.fields.Pipe@7f284218"
+2023-05-17 10:22:42.212 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@407a7f2a" -hez
+2023-05-17 10:22:42.213 [Pump.setOutput:181] DEBUG - Cső beállítása outputként: ID: "model.fields.Pipe@4ea5b703"
+2023-05-17 10:22:42.213 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@2a7ed1f" -hez
+2023-05-17 10:22:42.213 [Pump.setInput:168] DEBUG - Cső beállítása inputként: ID: "model.fields.Pipe@4ea5b703"
+2023-05-17 10:22:42.214 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.214 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.214 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.214 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.214 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.215 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.215 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.215 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.215 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.215 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.215 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.215 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.215 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.215 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.216 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.216 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.216 [Pump.acceptWater:155] DEBUG - 1 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.216 [Pump.acceptWater:156] DEBUG - 0 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.216 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.216 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.216 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.216 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.216 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.216 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.216 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.216 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.216 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.216 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.216 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.216 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.216 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.217 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.217 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.217 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.217 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.217 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.217 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.217 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.217 [Pump.acceptWater:155] DEBUG - 2 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.217 [Pump.acceptWater:156] DEBUG - 0 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.217 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.217 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.217 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.217 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.218 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.218 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.218 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.218 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.218 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.218 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.218 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.218 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.218 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.218 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.218 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.218 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.218 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.218 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.218 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.218 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.218 [Pump.acceptWater:155] DEBUG - 3 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.218 [Pump.acceptWater:156] DEBUG - 0 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.218 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.218 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.219 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.219 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.219 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.219 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.219 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.219 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.219 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.219 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.219 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.219 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.219 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.219 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.219 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.219 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.219 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.219 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.219 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.219 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.220 [Pump.acceptWater:155] DEBUG - 4 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.220 [Pump.acceptWater:156] DEBUG - 0 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.220 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.220 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.220 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.220 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.220 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.220 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.220 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.220 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.220 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.220 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.220 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.220 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.220 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.220 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.220 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.220 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.220 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.220 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.221 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.221 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.221 [Pump.acceptWater:155] DEBUG - 5 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.221 [Pump.acceptWater:156] DEBUG - 0 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.221 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.221 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.221 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.221 [Pump.step:125] DEBUG - Üres a tartály!
+2023-05-17 10:22:42.221 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.221 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.221 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.221 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:42.221 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:42.221 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.221 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:42.221 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:42.221 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:42.221 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:42.221 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:42.221 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:42.221 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:42.221 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:42.222 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:42.222 [Pump.acceptWater:154] INFO  - SIKERES vízelfogadás
+2023-05-17 10:22:42.222 [Pump.acceptWater:155] DEBUG - 5 mennyíségű víz van a pumpában
+2023-05-17 10:22:42.222 [Pump.acceptWater:156] DEBUG - 1 mennyíségű víz nem fért bele a pumpába
+2023-05-17 10:22:42.222 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:42.222 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:42.222 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:42.222 [Pump.step:125] DEBUG - Üres a tartály!

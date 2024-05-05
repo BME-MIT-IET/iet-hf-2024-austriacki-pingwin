@@ -1,0 +1,21 @@
+#MODULE 11
+#TEST TEST 11 - A játékos megpróbál kilyukasztani egy ép csövet, de nem tudja.
+
+gmcd logloc test/logs/test11.log
+loadlog log test/logs/test11.log
+
+crt Pipe pipe
+crt Saboteur player pipe
+call pipe damagedPipe
+call pipe fixed
+addplayer player
+actplayer player
+
+gmcd damage
+
+text siker SIKERTELEN csőlyukasztás, a cső védett
+number n1 1
+?occur log siker n1
+
+#END
+#END

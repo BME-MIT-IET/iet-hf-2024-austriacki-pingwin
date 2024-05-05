@@ -1,0 +1,35 @@
+2023-05-17 10:22:41.317 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:41.319 [Cistern.<init>:35] INFO  - SIKERES ciszterna létrehozás
+2023-05-17 10:22:41.319 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.319 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 1 -hez
+2023-05-17 10:22:41.319 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.319 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.319 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.319 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 2 -hez
+2023-05-17 10:22:41.320 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.320 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.320 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.320 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 3 -hez
+2023-05-17 10:22:41.320 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.320 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.321 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.321 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 4 -hez
+2023-05-17 10:22:41.321 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.321 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.321 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.321 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 5 -hez
+2023-05-17 10:22:41.321 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.321 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.321 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.321 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 6 -hez
+2023-05-17 10:22:41.321 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.321 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.321 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.321 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 7 -hez
+2023-05-17 10:22:41.321 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.322 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.322 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.322 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@1f760b47 Szomszédok száma: 8 -hez
+2023-05-17 10:22:41.322 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.322 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés
+2023-05-17 10:22:41.322 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés

@@ -1,0 +1,20 @@
+#MODULE 21
+#TEST TEST 21 - A szerelő megjavít egy csövet.
+
+gmcd logloc test/logs/test21.log
+loadlog log test/logs/test21.log
+
+crt Pipe pipe
+crt Plumber player pipe
+call pipe damagedPipe
+addplayer player
+actplayer player
+
+gmcd fix 
+
+text siker SIKERES csőjavítás
+number n1 1
+?occur log siker n1
+
+#END
+#END

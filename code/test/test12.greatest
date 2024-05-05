@@ -1,0 +1,28 @@
+#MODULE 12
+#TEST TEST 12 - A játékos ragadóssá teszi a csövet, amin áll.
+
+gmcd logloc test/logs/test12.log
+loadlog log test/logs/test12.log
+
+crt Pipe pipe
+crt Pump pump
+crt Saboteur player pipe
+call pipe connectTo pump
+call pump addNeighbourField pipe
+addplayer player
+actplayer player
+addstep pump
+
+gmcd sticky
+gmcd move 0
+
+text siker2 SIKERES - karakter sikeresen új mezőre lépett
+number n2 1
+?occur log siker2 n2
+
+text siker Pipe.isSticky = true
+number n1 1
+?occur log siker n1
+
+#END
+#END

@@ -1,0 +1,17 @@
+2023-05-17 10:22:41.569 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:41.571 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.571 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@478db956" -hez
+2023-05-17 10:22:41.572 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@6ca18a14" -hez
+2023-05-17 10:22:41.572 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@c667f46"
+2023-05-17 10:22:41.572 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@c667f46"
+2023-05-17 10:22:41.572 [Pipe.makeSlippery:284] INFO  - SIKERES a cső csúszós lett
+2023-05-17 10:22:41.573 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:41.573 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pump@478db956"
+2023-05-17 10:22:41.573 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:41.576 [ActiveField.getNeighbours:129] DEBUG - szomszédok visszaadva
+2023-05-17 10:22:41.576 [Pipe.acceptCharacter:152] DEBUG - A karakter csúszós csőre lépett
+2023-05-17 10:22:41.576 [Pipe.acceptCharacter:167] DEBUG - A karakter a cső túloldalára került!
+2023-05-17 10:22:41.576 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:41.576 [Field.removeCharacter:110] INFO  - SIKERES karaktereltávolítás
+2023-05-17 10:22:41.576 [Character.move:97] INFO  - SIKERES - karakter sikeresen új mezőre lépett
+2023-05-17 10:22:41.577 [Character.move:98] DEBUG - Character.actField = ID: "model.fields.Pump@6ca18a14"

@@ -1,0 +1,28 @@
+#MODULE 17
+#TEST TEST 17 - A játékos csatlakoztatja a nála lévő csövet az elemhez, amin áll.
+
+gmcd logloc test/logs/test17.log
+loadlog log test/logs/test17.log
+
+crt Pipe pipe
+crt Pump pump1
+crt Pump pump2
+crt Plumber player pump1
+call pump1 addNeighbourField pipe
+call pump2 addNeighbourField pipe
+call pipe connectTo pump1
+call pipe connectTo pump2
+addplayer player
+actplayer player
+
+gmcd pickupPipe 0
+gmcd nextplayer
+gmcd placedownPipe
+
+text siker Plumber.pipe = null
+number n1 1
+?occur log siker n1
+
+#END
+#END
+

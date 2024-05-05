@@ -1,0 +1,19 @@
+#MODULE 27
+#TEST TEST 27 -  A ciszterna új csövet hoz létre.
+
+gmcd logloc test/logs/test27.log
+loadlog log test/logs/test27.log
+
+crt Cistern cistern
+
+choice bool true
+testhelper bool
+
+call cistern step
+
+text siker SIKERES csőlétrehozás
+number n1 1
+?occur log siker n1
+
+#END
+#END

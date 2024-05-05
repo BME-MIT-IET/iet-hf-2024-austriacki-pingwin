@@ -1,0 +1,22 @@
+#MODULE 28
+#TEST TEST 28 - A ciszterna nem hoz létre új csövet.
+
+gmcd logloc test/logs/test28.log
+loadlog log test/logs/test28.log
+
+crt Cistern cistern
+
+choice bool true
+testhelper bool
+
+call cistern step
+call cistern step
+call cistern step
+call cistern step
+
+text txt SIKERES csőlétrehozás
+number n1 4
+?occur log txt n1
+
+#END
+#END

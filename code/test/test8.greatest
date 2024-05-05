@@ -1,0 +1,29 @@
+#MODULE 8
+#TEST TEST 8 - A játékos lehelyez egy pumpát.
+
+gmcd logloc test/logs/test8.log
+loadlog log test/logs/test8.log
+
+crt Pipe pipe
+crt Pump pump
+crt Cistern cs
+crt Plumber player cs
+call pipe connectTo cs
+call pipe connectTo pump
+call cs addNeighbourField pipe
+call pump addNeighbourField pipe
+addplayer player
+actplayer player
+addstep cs
+
+gmcd pickupPump
+gmcd move 0
+gmcd nextplayer
+gmcd placedownPump
+
+text siker SIKERES pumpalehelyezés
+number n1 1
+?occur log siker n1
+
+#END
+#END

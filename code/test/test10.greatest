@@ -1,0 +1,19 @@
+#MODULE 10
+#TEST TEST 10 - A játékos kilyukaszt egy csövet.
+
+gmcd logloc test/logs/test10.log
+loadlog log test/logs/test10.log
+
+crt Pipe pipe
+crt Saboteur player pipe
+addplayer player
+actplayer player
+
+gmcd damage
+
+text siker Field.isDamaged = true
+number n1 1
+?occur log siker n1
+
+#END
+#END 

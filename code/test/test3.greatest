@@ -1,0 +1,31 @@
+#MODULE 3
+#TEST TEST 3 - A játékos csúszós csőre lép és a túloldalára kerül.
+
+gmcd logloc test/logs/test3.log
+loadlog log test/logs/test3.log
+
+crt Pipe pipe
+crt Pump pump1
+crt Pump pump2
+call pipe connectTo pump1
+call pipe connectTo pump2
+call pump1 addNeighbourField pipe
+call pump2 addNeighbourField pipe
+call pipe makeSlippery
+crt Plumber player pump1
+addplayer player
+actplayer player
+addstep pump1
+addstep pump2
+
+gmcd state
+choice bool true
+testhelper bool
+gmcd move 0
+
+text siker sikertelen
+number numofsikertelen 0
+?occur log siker numofsikertelen
+
+#END
+#END

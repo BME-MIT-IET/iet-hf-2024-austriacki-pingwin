@@ -1,0 +1,25 @@
+#MODULE 5
+#TEST TEST 5 - A játékos nem tud csőre lépni.
+
+gmcd logloc test/logs/test5.log
+loadlog log test/logs/test5.log
+
+crt Pipe pipe
+crt Pump pump
+crt Plumber player1 pump
+crt Saboteur player2 pipe
+call pipe connectTo pump
+call pump addNeighbourField pipe
+addplayer player1
+addplayer player2
+actplayer player1
+addstep pump
+
+gmcd move 0
+
+text siker SIKERTELEN
+number numofsikertelen 2
+?occur log siker numofsikertelen
+
+#END
+#END

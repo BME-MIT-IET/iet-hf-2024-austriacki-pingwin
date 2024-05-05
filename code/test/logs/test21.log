@@ -1,0 +1,10 @@
+2023-05-17 10:22:40.363 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:40.365 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:40.365 [Pipe.acceptCharacter:181] INFO  - SIKERES csőre lépés
+2023-05-17 10:22:40.365 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pipe@2d29b4ee"
+2023-05-17 10:22:40.366 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:40.366 [Pipe.damagedPipe:123] INFO  - SIKERES csőlyukasztás
+2023-05-17 10:22:40.366 [Pipe.fixed:268] INFO  - SIKERES csőjavítás
+2023-05-17 10:22:40.366 [Pipe.fixed:269] DEBUG - A cső 10 ideig védett
+2023-05-17 10:22:40.367 [Plumber.fix:51] INFO  - SIKERES - plumber sikeresen megjavította az elemet amin áll
+2023-05-17 10:22:40.367 [Plumber.fix:52] DEBUG - Field.isDamaged = false : ID: "model.fields.Pipe@2d29b4ee"

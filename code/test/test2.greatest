@@ -1,0 +1,26 @@
+#MODULE 2
+#TEST TEST 2 - A játékos ragadós csőre lép.
+
+gmcd logloc test/logs/test2.log
+loadlog log test/logs/test2.log
+
+crt Pipe pipe
+crt Pump pump
+call pipe connectTo pump
+call pump addNeighbourField pipe
+crt Plumber player pump
+call pipe makeSticky
+addplayer player
+actplayer player
+addstep pump
+
+gmcd move 0
+gmcd nextplayer
+gmcd move 0
+
+text siker SIKERTELEN - karakter nem tudott lépni, mert le van ragasztva
+number numOfSikertelen 1
+?occur log siker numOfSikertelen
+
+#END
+#END

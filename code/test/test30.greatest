@@ -1,0 +1,32 @@
+#MODULE 30
+#TEST TEST 30 - A pumpa vizet nyom a kimenetére és eljut a következő pumpáig a víz.
+
+gmcd logloc test/logs/test30.log
+loadlog log test/logs/test30.log
+
+crt WaterSource ws
+crt Pipe fillPipe
+crt Pump pump1
+crt Pipe pipe
+crt Pump pump2
+call ws addNeighbourField fillPipe
+call fillPipe connectTo pump1
+call pump1 setInput fillPipe
+call pump1 setOutput pipe
+call pipe connectTo pump1
+call pump2 setInput pipe
+call pipe connectTo pump2
+
+gmcd state
+choice bool false
+testhelper bool
+call ws step
+call pump1 step
+call pump1 step
+
+text txt 1 mennyíségű víz van a pumpában
+number n1 1
+?occur log txt n1
+
+#END
+#END

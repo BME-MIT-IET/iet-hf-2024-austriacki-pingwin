@@ -1,0 +1,23 @@
+#MODULE 35
+#TEST TEST 35 - A pumpa vizet próbál nyomni a kimenetére, de nincs a tárolójában víz.
+
+gmcd logloc test/logs/test35.log
+loadlog log test/logs/test35.log
+
+crt Pump pump1
+crt Pipe pipe
+call pump1 setOutput pipe
+
+gmcd state
+choice bool false
+testhelper bool
+
+call pump1 step
+call pump1 step
+
+text txt Üres a tartály!
+number n1 2
+?occur log txt n1
+
+#END
+#END

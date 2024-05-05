@@ -1,0 +1,4 @@
+2023-05-17 10:22:41.458 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:41.461 [Pump.step:89] DEBUG - A pumpa el lett rontva
+2023-05-17 10:22:41.461 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:41.461 [Pump.step:98] WARN  - Nincs a szomszédos elemek között a be/kimenetnek állított cső, így nem tudott a pumpa lépni!

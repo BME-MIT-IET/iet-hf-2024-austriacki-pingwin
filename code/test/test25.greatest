@@ -1,0 +1,30 @@
+#MODULE 25
+#TEST TEST 25 - A vízforrás vizet nyom egy kimenetére, de a következő pumpa tele van, így a víz a csőben marad.
+
+gmcd logloc test/logs/test25.log
+loadlog log test/logs/test25.log
+
+crt WaterSource wsource
+crt Pipe pipe
+crt Pump pump
+call wsource setOutput pipe
+call pipe connectTo wsource
+call pump setInput pipe
+call pipe connectTo pump
+
+gmcd state
+choice bool false
+testhelper bool
+call wsource step
+call wsource step
+call wsource step
+call wsource step
+call wsource step
+call wsource step
+
+text txt 1 mennyíségű víz nem fért bele a pumpába
+number n1 1
+?occur log txt n1
+
+#END
+#END

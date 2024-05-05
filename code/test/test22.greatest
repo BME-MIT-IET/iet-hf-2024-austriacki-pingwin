@@ -1,0 +1,19 @@
+#MODULE 22
+#TEST TEST 22 - A szerelő felvesz egy pumpát.
+
+gmcd logloc test/logs/test22.log
+loadlog log test/logs/test22.log
+
+crt Cistern c
+crt Plumber player c
+addplayer player
+actplayer player
+
+gmcd pickupPump
+
+text siker SIKERES - plumber sikeresen felvett egy pumpát
+number n1 1
+?occur log siker n1
+
+#END
+#END

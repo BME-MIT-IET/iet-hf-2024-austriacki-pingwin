@@ -1,0 +1,24 @@
+#MODULE 6
+#TEST TEST 6 - A játékos egy aktív elemre lép
+
+gmcd logloc test/logs/test6.log
+loadlog log test/logs/test6.log
+
+crt Pipe pipe
+crt Pump pump
+crt Plumber player pipe
+call pipe connectTo pump
+call pump addNeighbourField pipe
+addplayer player
+actplayer player
+addstep pump
+
+gmcd move 0
+
+text siker SIKERES - karakter sikeresen új mezőre lépett
+number n1 1
+?occur log siker n1
+
+#END
+#END 
+

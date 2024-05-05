@@ -1,0 +1,29 @@
+#MODULE 14
+#TEST 14
+
+gmcd logloc test/logs/test14.log
+loadlog log test/logs/test14.log
+
+crt Pipe pipe1
+crt Pipe pipe2
+crt Pipe pipe3
+crt Pump pump
+crt Saboteur player pump
+call pipe1 connectTo pump
+call pipe2 connectTo pump
+call pipe3 connectTo pump
+call pump setInput pipe1
+call pump setOutput pipe2
+call pump addNeighbourField pipe3
+addplayer player
+actplayer player
+
+//gmcd change 1 420
+gmcd change 1 1
+
+text siker INFO  - SIKERTELEN pumpaátállítás
+number n1 1
+?occur log siker n1
+
+#END
+#END

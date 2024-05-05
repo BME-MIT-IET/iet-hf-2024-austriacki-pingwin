@@ -1,0 +1,16 @@
+2023-05-17 10:22:39.286 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:39.289 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:39.289 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:39.289 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pump@239a307b"
+2023-05-17 10:22:39.290 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:39.290 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@239a307b" -hez
+2023-05-17 10:22:39.290 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@2a8448fa" -hez
+2023-05-17 10:22:39.290 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@6f204a1a"
+2023-05-17 10:22:39.291 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@6f204a1a"
+2023-05-17 10:22:39.293 [ActiveField.getNeighbours:129] DEBUG - szomszédok visszaadva
+2023-05-17 10:22:39.293 [Pipe.disconnectFrom:253] INFO  - SIKERES csőlecsatlakoztatás
+2023-05-17 10:22:39.293 [Pipe.disconnectFrom:255] INFO  - A cső egyik vége sem lett lecsatlakoztatva (1 helyre volt bekötve és nincs senkinél a másik vége.)
+2023-05-17 10:22:39.294 [Pipe.incPickedUpCounter:329] DEBUG - Cső 'pickedUpCounter' növelése: 0+1
+2023-05-17 10:22:39.294 [Plumber.pickPipe:137] INFO  - SIKERES - plumber sikeresen felvett egy csövet
+2023-05-17 10:22:39.295 [Plumber.pickPipe:138] DEBUG - Plumber.pipe = ID: "model.fields.Pipe@6f204a1a"
+2023-05-17 10:22:39.295 [ActiveField.getNeighbours:129] DEBUG - szomszédok visszaadva

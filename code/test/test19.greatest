@@ -1,0 +1,23 @@
+#MODULE 19
+#TEST TEST 19 - A szabotőr csúszóssá tesz egy csövet.
+
+gmcd logloc test/logs/test19.log
+loadlog log test/logs/test19.log
+
+crt Pipe pipe
+crt Pump pump
+crt Saboteur player pipe
+call pipe connectTo pump
+call pump addNeighbourField pipe
+addplayer player
+actplayer player
+
+gmcd sticky
+gmcd move 0
+
+text siker  SIKERES - karakter sikeresen új mezőre lépett
+number n1 1
+?occur log siker n1
+
+#END
+#END

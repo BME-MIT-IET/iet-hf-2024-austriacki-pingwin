@@ -1,0 +1,20 @@
+#MODULE 29
+#TEST TEST 29 -  A pumpa meghibásodik.
+
+gmcd logloc test/logs/test29.log
+loadlog log test/logs/test29.log
+
+crt Pump pump
+choice bool true
+testhelper bool
+gmcd state
+choice bool false
+testhelper bool
+call pump step
+
+text siker DEBUG - A pumpa el lett rontva
+number n1 1
+?occur log siker n1
+
+#END
+#END

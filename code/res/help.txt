@@ -1,0 +1,56 @@
+[logloc <elérési út>]
+	Leírás: A logfájl helyét lehet vele beállítani. Az elérési utat szóközzel kell megadni a parancs után.
+
+[loadgreat <elérési út>]
+	Leírás: A tesztelőnyelvvel megadott parancsokat lehet vele betölteni. Az elérési utat szóközzel kell megadni a parancs után.
+
+[loadgcmd <elérési út>]
+	Leírás: Játék parancsokat lehet vele betölteni, amiket végrehajt a program. Az elérési utat szóközzel kell megadni a parancs után.
+
+[move <sorszám>]
+	Leírás: Mozog az épp soron lévő játékos. Szóközzel a parancstól elválasztva kell megadni annak az elemnek a sorszámát, amelyre lépni szeretnénk. Először meghívja a state parancsot, hogy megjelenítse a játék jelenlegi állapotát.
+
+[fix]
+	Leírás: Pumpa vagy cső javítása. Ha az aktuális játékos szerelő, különben nem engedi a program.
+
+[damage]
+	Leírás: Cső lyukasztása, amin a játékos áll.
+
+[nextplayer]
+	Leírás: Jelenlegi játékos befejezi a körét. Következő játékos lép.
+
+[cancel]
+	Leírás: Azonnali kilépés az aktuális játékból.
+
+[start <szerelők száma> <szabotőrök száma>]
+	Leírás: Új játék indítása. Megadható, hogy hány szabotőr és szerelő játszik. Egymástól és a parancstól is szóközzel elválasztva. Alapértelmezetten mindkét csapatban kettő játékos van, ha ennél kevesebbet akarnak a felhasználók megadni azt a program nem engedi és jelzi nekik a hibájukat.
+
+[pickupPump]
+	Leírás: Pumpa felvétele. Csak ha ciszternánál van az adott játékos. Ha van már nála pumpa akkor nem vehet fel újat.
+
+[pickupPipe]
+	Leírás: Cső felvétele. Ha van már nála cső akkor nem vehet fel újat. Ha van szabadvégű szomszédja a csőnek azt kapja meg a szerelő, ha nincs azt kapja, amin áll. Ha az aktuális játékos szerelő, különben nem engedi a program. Ha nincs mit felvenni akkor sem engedi a program.
+
+[placedownPipe]
+	Leírás: Cső lehelyezése. Amin áll arra csatlakoztatja, ha van szabad helye, ha nincs neki hely akkor nem lehet lerakni. Ha az aktuális játékos szerelő, különben nem engedi a program. Ha nincs mit lerakni akkor sem engedi a program.
+
+[placedownPump]
+	Leírás: Pumpát helyez az aktuális csőre. Ha az aktuális játékos szerelő, különben nem engedi a program. Ha nincs mit lerakni akkor sem engedi a program.
+
+[change <input> <output>]
+	Leírás: Egy pumpa be és kimenetét lehet vele beállítani. Szóközzel a parancs után kell megadni az input ás output csövek sorszámát.
+
+[slippery]
+	Leírás: Csúszóssá teszi a csövet, amin a játékos áll. Ha az aktuális játékos egy szabotőr különben nem engedi a program.
+
+[sticky]
+	Leírás: Ragadóssá teszi a csövet, amin a játékos éppen áll. Ha az aktuális játékos szerelő, különben nem engedi a program.
+
+[state]
+	Leírás: Kiírja a különböző pályaelemeket és azok állapotát (csúszós, ki-be menet egy pumpán, stb.), szomszédjait, valamint a csapatok pontszámát. Összes kommand és melyiket milyen pályaelemen lehet alkalmazni.
+
+[save]
+	Leírás: Elmenti a játék állását fájlba.
+
+[load]
+	Leírás: Betölti egy elmentett játék állását fájlból. 

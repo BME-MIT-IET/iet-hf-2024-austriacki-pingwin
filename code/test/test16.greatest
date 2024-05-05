@@ -1,0 +1,23 @@
+#MODULE 16
+#TEST TEST 16 - A játékos le szeretné csatlakoztatni egy cső végét az elemről, amin áll, de a másik vége szabad így azt fogja meg.
+
+gmcd logloc test/logs/test16.log
+loadlog log test/logs/test16.log
+
+crt Pipe pipe
+crt Pump pump
+crt Plumber player pump
+call pipe connectTo pump
+call pump addNeighbourField pipe
+addplayer player
+actplayer player
+
+gmcd pickupPipe 0
+gmcd state
+
+text siker INFO  - SIKERES - plumber sikeresen felvett egy csövet
+number n1 1
+?occur log siker n1
+
+#END
+#END

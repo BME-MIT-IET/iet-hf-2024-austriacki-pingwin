@@ -1,0 +1,22 @@
+#MODULE 20
+#TEST TEST 20 - A szerelő megjavít egy pumpát.
+
+gmcd logloc test/logs/test20.log
+loadlog log test/logs/test20.log
+
+crt Pump pump
+crt Plumber player pump
+addplayer player
+actplayer player
+
+choice bool true
+testhelper bool
+call pump step
+gmcd fix
+
+text siker SIKERES - plumber sikeresen megjavította az elemet amin áll
+number n1 1
+?occur log siker n1
+
+#END
+#END

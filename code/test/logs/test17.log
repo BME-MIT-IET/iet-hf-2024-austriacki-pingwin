@@ -1,0 +1,19 @@
+2023-05-17 10:22:39.594 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:39.597 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:39.598 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:39.598 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pump@1a4927d6"
+2023-05-17 10:22:39.599 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:39.599 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@7a6d7e92"
+2023-05-17 10:22:39.600 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@7a6d7e92"
+2023-05-17 10:22:39.602 [ActiveField.getNeighbours:129] DEBUG - szomszédok visszaadva
+2023-05-17 10:22:39.603 [Pipe.disconnectFrom:255] INFO  - A cső egyik vége sem lett lecsatlakoztatva (1 helyre volt bekötve és nincs senkinél a másik vége.)
+2023-05-17 10:22:39.603 [Pipe.incPickedUpCounter:329] DEBUG - Cső 'pickedUpCounter' növelése: 0+1
+2023-05-17 10:22:39.603 [Plumber.pickPipe:137] INFO  - SIKERES - plumber sikeresen felvett egy csövet
+2023-05-17 10:22:39.603 [Plumber.pickPipe:138] DEBUG - Plumber.pipe = ID: "model.fields.Pipe@7a6d7e92"
+2023-05-17 10:22:39.605 [Character.elapseRound:64] DEBUG - Játékos körének vége: (glueTimer=0)
+2023-05-17 10:22:39.608 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@1a4927d6" -hez
+2023-05-17 10:22:39.609 [Pipe.decPickedUpCounter:337] DEBUG - Cső 'pickedUpCounter' csökkentése: 1-1
+2023-05-17 10:22:39.609 [ActiveField.placeDownPipe:66] INFO  - SIKERES - sikerült lerakni a csövet.
+2023-05-17 10:22:39.609 [ActiveField.placeDownPipe:67] DEBUG - neighbourFields-be bekerült a : ID: "model.fields.Pipe@7a6d7e92"
+2023-05-17 10:22:39.610 [Plumber.placePipe:163] INFO  - SIKERES - plumber sikeresen lerakott egy csövet
+2023-05-17 10:22:39.610 [Plumber.placePipe:164] DEBUG - Plumber.pipe = null

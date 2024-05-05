@@ -1,0 +1,22 @@
+#MODULE 23
+#TEST TEST 23 - A vízforrás vizet nyom egy kimenetére és az el is jut a következő pumpáig.
+
+gmcd logloc test/logs/test23.log
+loadlog log test/logs/test23.log
+
+crt WaterSource wsource
+crt Pipe pipe
+crt Pump pump
+call pipe connectTo wsource
+call wsource setOutput pipe
+call pipe connectTo pump
+call pump setInput pipe
+
+call wsource step
+
+text txt 1 mennyíségű víz van a pumpában
+number n1 1
+?occur log txt n1
+
+#END
+#END

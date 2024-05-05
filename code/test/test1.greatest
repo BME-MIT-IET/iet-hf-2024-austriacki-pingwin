@@ -1,0 +1,22 @@
+#MODULE 1
+#TEST TEST 1 - A játékos sima csőre lép.
+
+gmcd logloc test/logs/test1.log
+loadlog log test/logs/test1.log
+
+crt Pipe pipe
+crt Pump pump
+call pump addNeighbourField pipe
+crt Plumber player pump
+addplayer player
+actplayer player
+addstep pump
+
+gmcd move 0
+
+text siker sikertelen
+number numOfSikertelen 0
+?occur log siker numOfSikertelen
+
+#END
+#END

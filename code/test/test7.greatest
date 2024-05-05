@@ -1,0 +1,25 @@
+#MODULE 7
+#TEST TEST 7 - A játékos egy aktív elemre próbál lépni, de nem tud, mert ragadós csövön áll.
+
+gmcd logloc test/logs/test7.log
+loadlog log test/logs/test7.log
+
+crt Pipe pipe
+crt Pump pump
+crt Plumber player pump
+call pipe connectTo pump
+call pump addNeighbourField pipe
+call pipe makeSticky
+addplayer player
+actplayer player
+
+gmcd move 0
+gmcd nextplayer
+gmcd move 0
+
+text siker SIKERTELEN - karakter nem tudott lépni, mert le van ragasztva
+number n1 1
+?occur log siker n1
+
+#END
+#END

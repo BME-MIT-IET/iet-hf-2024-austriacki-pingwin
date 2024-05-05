@@ -1,0 +1,8 @@
+2023-05-17 10:22:40.487 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:40.489 [Cistern.<init>:35] INFO  - SIKERES ciszterna létrehozás
+2023-05-17 10:22:40.490 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:40.492 [Character.<init>:39] DEBUG - Character.actField = ID: model.fields.Cistern@2fb0623e Szomszédok száma: 0
+2023-05-17 10:22:40.493 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:40.493 [Cistern.givePump:61] INFO  - SIKERES pumpa átadás
+2023-05-17 10:22:40.493 [Plumber.pickPump:79] INFO  - SIKERES - plumber sikeresen felvett egy pumpát
+2023-05-17 10:22:40.494 [Plumber.pickPump:80] DEBUG - Plumber.pump = ID: "model.fields.Pump@21be3395"

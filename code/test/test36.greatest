@@ -1,0 +1,191 @@
+#MODULE 36 A játék pár körös működésének megfelelő lefolyásának ellenőrzése.
+
+gmcd logloc test/logs/test36.log
+loadlog log test/logs/test36.log
+
+crt WaterSource wsource
+crt Pump pump1
+crt Pump pump2
+crt Cistern cistern
+
+crt Pipe pipe1
+crt Pipe pipe2
+crt Pipe pipe3
+crt Pipe pipe4
+
+crt Plumber plumber wsource
+crt Saboteur saboteur wsource
+
+call wsource setOutput pipe1
+call pipe1 connectTo wsource
+
+call wsource setOutput pipe2
+call pipe2 connectTo wsource
+
+call pump1 setInput pipe1
+call pipe1 connectTo pump1
+
+call pump2 setInput pipe2
+call pipe2 connectTo pump2
+
+call pump1 setOutput pipe3
+call pipe3 connectTo pump1
+
+call pump2 setOutput pipe4
+call pipe4 connectTo pump2
+
+call cistern setInput pipe3
+call pipe3 connectTo cistern
+
+call cistern setInput pipe4
+call pipe4 connectTo cistern
+
+addstep wsource
+addstep pump1
+addstep pump2
+addstep cistern
+
+addpipe pipe1
+addpipe pipe2
+addpipe pipe3
+addpipe pipe4
+
+addplayer saboteur
+addplayer plumber
+actplayer saboteur
+
+
+#TEST 1. A szabotőr rálép az egyik csőre és kilyukasztja azt, ezzel vége a körének.
+gmcd move 0 //pipe1-re saboteur
+gmcd damage
+gmcd nextplayer
+
+text siker INFO  - SIKERES csőlyukasztás
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 2. A szerelő megpróbál rálépni erre a csőre, viszont nem tud, mert a szabotőr azon áll, így a másik irányba lép, majd ragadóssá teszi azt.
+gmcd move 0 //pipe1-re plumber
+gmcd move 1
+gmcd sticky
+gmcd nextplayer
+
+text siker INFO  - SIKERTELEN csőre lépés
+number n1 1
+?occur log siker n1
+
+text siker INFO  - SIKERES a cső ragadós lett
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 3 A szabotőr átlép a csőről a pumpára és megpróbálja átállítani annak be-,és kimenetét, sikertelenül, hiszen az alapbeállításon kívül nincs más jó lehetőség.
+gmcd move 1 //pump1-re saboteur
+gmcd change 0 0 //pipe 1 csere a „semmire”
+gmcd nextplayer
+
+text siker SIKERTELEN - karakter nem tudta megváltoztatni a pumpa be és kimenetét
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 4 A szerelő visszalép a vízforrásra és lecsatlakoztatja azt a csövet, amiről lelépett.
+gmcd move 0 //wsourcera plumber
+gmcd pickupPipe 1
+gmcd nextplayer
+
+text siker INFO  - SIKERES csőlecsatlakoztatás
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 5 A szabotőr átlép a hibás pumpa és a vízforrás közötti csőre, majd csúszóssá teszi azt.
+gmcd move 1
+gmcd slippery
+gmcd nextplayer
+
+text siker INFO  - SIKERES a cső csúszós lett
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 6 A szerelő átlép a lyukas csőre, majd megjavítja azt.
+gmcd move 0 //pipe1-re
+gmcd fix
+gmcd nextplayer
+
+text siker DEBUG - A cső 10 ideig védett
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 7 A szabotőr átlép a vízforrásra.
+gmcd move 1 //cistern-re
+gmcd nextplayer
+#END
+
+#TEST 8 A szerelő átlép a foltozott cső melletti pumpára, majd hozzácsatlakoztatja a nála lévő csövet.
+gmcd move 1 //pump1-re
+gmcd placedownPipe
+gmcd nextplayer
+
+text siker INFO  - SIKERES - sikerült lerakni a csövet.
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 9 A szabotőr átlép a csúszós csőre és a pumpára csúszik.
+choice true true
+testhelper true
+gmcd move 0 //pipe3-ra
+gmcd nextplayer
+
+text siker DEBUG - A karakter a cső túloldalára került!
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 10 A szerelő megjavítja a pumpát, amin áll és átlép a csőre a vízforrás felé.
+choice true true
+testhelper true
+call pump1 step
+gmcd fix 
+gmcd move 1 //pipe3-ra
+gmcd nextplayer
+
+text siker INFO  - SIKERES - plumber sikeresen megjavította az elemet amin áll
+number n1 2
+?occur log siker n1
+#END
+
+#TEST 11 A szabotőr átlép a foltozott csőre, amit megpróbál kilyukasztani, de nem tudja.
+gmcd move 0 //pipe1-re
+gmcd damage
+gmcd nextplayer
+
+text siker INFO  - SIKERTELEN csőlyukasztás, a cső védett
+number n1 1
+?occur log siker n1
+#END
+
+#TEST 12 A szerelő a ciszternára lép, majd felveszi a létrejött cső szabad végét.
+gmcd move 1 //cisternre
+gmcd pickupPipe 3
+gmcd nextplayer
+
+text siker DEBUG - Cső 'pickedUpCounter' növelése: 0+1
+number n1 2
+?occur log siker n1
+#END
+
+#TEST 13 A szabotőr átlép a mellette lévő pumpára, majd átállítja annak be-, és kimenetét, immár megfelelően, így a másik pumpába 2 úton jut el a víz.
+gmcd move 1 //pump1-re
+gmcd change 0 2 //pipe1 pipe2-re
+
+text siker INFO  - SIKERES - karakter sikeresen megváltoztatta a pumpa be és kimenetét
+number n1 1
+?occur log siker n1
+#END
+
+#END

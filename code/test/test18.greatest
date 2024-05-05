@@ -1,0 +1,44 @@
+#MODULE 18
+#TEST TEST 18 - A játékos csatlakoztatni akarja a nála lévő csövet az elemhez, amin áll, de annak nincs szabad csatlakozása.
+
+gmcd logloc test/logs/test18.log
+loadlog log test/logs/test18.log
+
+crt Pipe pipe1
+crt Pipe pipe2
+crt Pipe pipe3
+crt Pipe pipe4
+crt Pipe pipe5
+crt Pipe pipe6
+crt Pipe pipe7
+crt Pipe pipe8
+crt Pump pump1
+crt Pump pump2
+crt Plumber player pump1
+Call pipe1 connectTo pump1
+Call pipe1 connectTo pump2
+Call pump1 addNeighbourField pipe1
+Call pump1 addNeighbourField pipe2
+Call pump1 addNeighbourField pipe3
+Call pump1 addNeighbourField pipe4
+Call pump1 addNeighbourField pipe5
+Call pump1 addNeighbourField pipe6
+Call pump1 addNeighbourField pipe7
+Call pump1 addNeighbourField pipe8
+Call pump2 addNeighbourField pipe1
+addplayer player
+actplayer player
+
+gmcd pickupPipe 0
+
+crt Pipe pipe9
+Call pump1 addNeighbourField pipe9
+
+gmcd placedownPipe
+
+text siker SIKERTELEN - plumber nem tudott lerakni csövet
+number n1 1
+?occur log siker n1
+
+#END
+#END

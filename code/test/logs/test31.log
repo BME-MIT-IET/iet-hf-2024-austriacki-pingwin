@@ -1,0 +1,32 @@
+2023-05-17 10:22:41.862 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:41.863 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.864 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.864 [Cistern.<init>:35] INFO  - SIKERES ciszterna létrehozás
+2023-05-17 10:22:41.864 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@74f6c5d8"
+2023-05-17 10:22:41.864 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@27912e3" -hez
+2023-05-17 10:22:41.864 [Pump.setInput:168] DEBUG - Cső beállítása inputként: ID: "model.fields.Pipe@74f6c5d8"
+2023-05-17 10:22:41.865 [Pump.setOutput:181] DEBUG - Cső beállítása outputként: ID: "model.fields.Pipe@34b9f960"
+2023-05-17 10:22:41.865 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: "model.fields.Pump@27912e3" -hez
+2023-05-17 10:22:41.865 [Cistern.setInput:97] DEBUG - Új bemenet került beállításra
+2023-05-17 10:22:41.865 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@43015c69 Szomszédok száma: 1 -hez
+2023-05-17 10:22:41.866 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:41.866 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:41.866 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:41.866 [WaterSource.step:45] INFO  - SIKERES vízforrás léptetés
+2023-05-17 10:22:41.866 [WaterSource.step:46] DEBUG - A vízforrás vizet nyomott minden kimenetére
+2023-05-17 10:22:41.866 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:41.866 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:1
+2023-05-17 10:22:41.866 [Pipe.setFluidLevel:357] DEBUG - Cső 'fluidLevel' beállítása:1
+2023-05-17 10:22:41.866 [Pipe.getFluidLevel:347] DEBUG - Cső 'fluidLevel' visszaadása:0
+2023-05-17 10:22:41.866 [Pump.step:106] DEBUG - Víz szívása a pumpa bemenetéről. Kapott víz: 0
+2023-05-17 10:22:41.866 [Pump.step:112] INFO  - SIKERES vízszívás
+2023-05-17 10:22:41.866 [Pump.step:122] DEBUG - Nincs a pumpának bemenete, így nem történt semmi!
+2023-05-17 10:22:41.866 [Pump.step:93] DEBUG - A pumpa nem lett elrontva
+2023-05-17 10:22:41.866 [Pipe.acceptWater:202] DEBUG - A víz hozzáadásra került a csőhöz
+2023-05-17 10:22:41.866 [Pipe.acceptWater:211] DEBUG - Minden víz belefért
+2023-05-17 10:22:41.866 [Cistern.acceptWater:86] INFO  - 1_mennyíségű vizet kapott a ciszterna!
+2023-05-17 10:22:41.866 [Cistern.notifyObservers:127] DEBUG - Obszerverek értesítése
+2023-05-17 10:22:41.867 [Pipe.acceptWater:218] DEBUG - Víz továbbadása a következő elemnek
+2023-05-17 10:22:41.867 [Pipe.acceptWater:229] INFO  - SIKERES a cső vízelfogadása
+2023-05-17 10:22:41.867 [Pump.step:116] INFO  - SIKERES víznyomás
+2023-05-17 10:22:41.867 [Pump.step:125] DEBUG - Üres a tartály!

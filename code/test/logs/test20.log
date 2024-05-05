@@ -1,0 +1,8 @@
+2023-05-17 10:22:40.213 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:40.215 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:40.215 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pump@2f953efd"
+2023-05-17 10:22:40.216 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:40.217 [Pump.step:89] DEBUG - A pumpa el lett rontva
+2023-05-17 10:22:40.217 [Pump.step:128] DEBUG - A pumpa hibás
+2023-05-17 10:22:40.218 [Plumber.fix:51] INFO  - SIKERES - plumber sikeresen megjavította az elemet amin áll
+2023-05-17 10:22:40.218 [Plumber.fix:52] DEBUG - Field.isDamaged = false : ID: "model.fields.Pump@2f953efd"

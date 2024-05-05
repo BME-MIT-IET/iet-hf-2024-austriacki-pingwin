@@ -1,0 +1,22 @@
+#MODULE 24
+#TEST TEST 24 - A vízforrás vizet nyom egy kimenetére és az el is jut a következő ciszternáig.
+
+gmcd logloc test/logs/test24.log
+loadlog log test/logs/test24.log
+
+crt WaterSource wsource
+crt Pipe pipe
+crt Cistern cistern
+call wsource setOutput pipe
+call pipe connectTo wsource
+call cistern setInput pipe
+call pipe connectTo cistern
+
+call wsource step
+
+text txt 1_mennyíségű vizet kapott a ciszterna!
+number n1 1
+?occur log txt n1
+
+#END
+#END

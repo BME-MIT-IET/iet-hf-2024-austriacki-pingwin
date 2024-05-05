@@ -1,0 +1,11 @@
+2023-05-17 10:22:37.665 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:37.670 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:37.672 [ActiveField.addNeighbourField:119] DEBUG - cső hozzáadva a szomszédjaihoz	neighbourFields-be bekerült a : ID: "model.fields.Pipe@16eb3ea3"
+2023-05-17 10:22:37.673 [Field.acceptCharacter:96] INFO  - SIKERES karakterléptetés
+2023-05-17 10:22:37.673 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pump@353352b6"
+2023-05-17 10:22:37.673 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
+2023-05-17 10:22:37.674 [ActiveField.getNeighbours:129] DEBUG - szomszédok visszaadva
+2023-05-17 10:22:37.675 [Pipe.acceptCharacter:181] INFO  - SIKERES csőre lépés
+2023-05-17 10:22:37.675 [Field.removeCharacter:110] INFO  - SIKERES karaktereltávolítás
+2023-05-17 10:22:37.675 [Character.move:97] INFO  - SIKERES - karakter sikeresen új mezőre lépett
+2023-05-17 10:22:37.676 [Character.move:98] DEBUG - Character.actField = ID: "model.fields.Pipe@16eb3ea3"

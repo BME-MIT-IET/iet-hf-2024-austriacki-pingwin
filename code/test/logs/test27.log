@@ -1,0 +1,6 @@
+2023-05-17 10:22:41.204 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
+2023-05-17 10:22:41.206 [Cistern.<init>:35] INFO  - SIKERES ciszterna létrehozás
+2023-05-17 10:22:41.206 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
+2023-05-17 10:22:41.206 [Pipe.connectTo:239] DEBUG - A cső csatlakoztatva lett: ID: model.fields.Cistern@34129c78 Szomszédok száma: 1 -hez
+2023-05-17 10:22:41.206 [Pipe.registerObserver:368] DEBUG - Cső observer beállítása
+2023-05-17 10:22:41.206 [Cistern.step:78] INFO  - SIKERES ciszterna léptetés

@@ -1,0 +1,16 @@
+nextplayer
+move 1
+move 1
+fix
+nextplayer
+dsa
+help
+nextplayer
+move 0
+nextplayer
+move 0
+nextplayer
+nextplayer
+nextplayer
+nextplayer
+nextplayer

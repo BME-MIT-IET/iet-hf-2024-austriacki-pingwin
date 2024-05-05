@@ -1,0 +1,20 @@
+#MODULE 26
+#TEST TEST 26 - A vízforrás vizet nyom a kimenetére, de a cső lyukas így a víz elveszik.
+
+gmcd logloc test/logs/test26.log
+loadlog log test/logs/test26.log
+
+crt WaterSource wsource
+crt Pipe pipe
+call wsource setOutput pipe
+call pipe connectTo wsource
+call pipe damagedPipe
+
+call wsource step
+
+text txt Cső observereinek értesítése 1 értékkel
+number n1 1
+?occur log txt n1
+
+#END
+#END

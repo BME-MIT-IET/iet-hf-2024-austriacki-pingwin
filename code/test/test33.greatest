@@ -1,0 +1,26 @@
+#MODULE 33
+#TEST TEST 33 - A pumpa nem tud vizet nyomni a kimenetére, mert nincs neki.
+
+gmcd logloc test/logs/test33.log
+loadlog log test/logs/test33.log
+
+crt WaterSource ws
+crt Pipe fillPipe
+crt Pump pump
+call ws addNeighbourField fillPipe
+call fillPipe connectTo pump
+call pump setInput fillPipe
+
+gmcd state
+choice bool false
+testhelper bool
+call ws step
+call pump step
+call pump step
+
+text txt Nincs a pumpának kimenete, így nem történt semmi!
+number n1 1
+?occur log txt n1
+
+#END
+#END

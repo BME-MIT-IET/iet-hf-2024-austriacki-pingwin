@@ -1,0 +1,34 @@
+#MODULE 32
+#TEST TEST 32 - A pumpa vizet nyom a kimenetére, de a cső lyukas és a víz elveszik.
+
+gmcd logloc test/logs/test32.log
+loadlog log test/logs/test32.log
+
+crt WaterSource ws
+crt Pipe fillPipe
+crt Pump pump
+crt Pipe pipe
+call ws addNeighbourField fillPipe
+call fillPipe connectTo pump
+call pump setInput fillPipe
+call pump setOutput pipe
+call pipe connectTo pump
+call pipe damagedPipe
+
+crt Plumber player pipe
+addplayer player
+actplayer player
+
+gmcd state
+choice bool false
+testhelper bool
+call ws step
+call pump step
+call pump step
+
+text txt Cső observereinek értesítése 1 értékkel
+number n1 1
+?occur log txt n1
+
+#END
+#END

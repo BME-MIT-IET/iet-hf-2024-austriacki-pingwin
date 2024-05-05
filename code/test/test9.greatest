@@ -1,0 +1,19 @@
+#MODULE 9
+#TEST TEST 9 - A játékos megpróbál pumpát lehelyezni, de nem tud, mert nincs nála pumpa.
+
+gmcd logloc test/logs/test9.log
+loadlog log test/logs/test9.log
+
+crt Pipe pipe
+crt Plumber player pipe
+addplayer player
+actplayer player
+
+gmcd placedownPump
+
+text siker SIKERTELEN - plumber nem tudott letenni pumpát
+number n1 1
+?occur log siker n1
+
+#END
+#END
