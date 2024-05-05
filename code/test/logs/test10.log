@@ -1,8 +1,0 @@
-2023-05-17 10:22:38.481 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
-2023-05-17 10:22:38.484 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
-2023-05-17 10:22:38.485 [Pipe.acceptCharacter:181] INFO  - SIKERES csőre lépés
-2023-05-17 10:22:38.486 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pipe@221a3fa4"
-2023-05-17 10:22:38.487 [Saboteur.<init>:27] INFO  - SIKERES - saboteur sikeresen létrejött
-2023-05-17 10:22:38.488 [Pipe.damagedPipe:123] INFO  - SIKERES csőlyukasztás
-2023-05-17 10:22:38.489 [Character.damagePipe:144] INFO  - SIKERES - karakter sikeresen elrontotta a csövet
-2023-05-17 10:22:38.489 [Character.damagePipe:145] DEBUG - Field.isDamaged = true

@@ -1,6 +1,0 @@
-2023-05-17 10:22:43.337 [LogHelper.setTestLogging:56] INFO  - Logolás beállítva teszt szinten!
-2023-05-17 10:22:43.339 [Pipe.<init>:44] INFO  - SIKERES csőlétrehozás
-2023-05-17 10:22:43.339 [Pipe.acceptCharacter:181] INFO  - SIKERES csőre lépés
-2023-05-17 10:22:43.339 [Character.<init>:39] DEBUG - Character.actField = ID: "model.fields.Pipe@2812b107"
-2023-05-17 10:22:43.339 [Plumber.<init>:34] INFO  - SIKERES - plumber sikeresen létrejött
-2023-05-17 10:22:43.339 [Plumber.placePump:118] INFO  - SIKERTELEN - plumber nem tudott letenni pumpát
