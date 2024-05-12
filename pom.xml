@@ -30,7 +30,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <archive>
-                        <manifestFile>META-INF/MANIFEST_g.MF</manifestFile>
+                        <manifestFile>code/META-INF/MANIFEST_g.MF</manifestFile>
                     </archive>
                 </configuration>
             </plugin>
