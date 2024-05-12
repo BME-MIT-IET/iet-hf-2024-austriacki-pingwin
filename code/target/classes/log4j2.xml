@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="CLR" value="{FATAL=bg_red, ERROR=bright_red, WARN=yellow, INFO=bright_green, DEBUG=bright_cyan, TRACE=bright_white}"/>
+    </Properties>
+    <Appenders>
+        <Console name="consoleLogger" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%C{1}.%M:%L] %-5level - %msg%n%throwable}${CLR}" disableAnsi="false"/>
+        </Console>
+        <RollingFile name="fileLogger"  filePattern="./logs/log_%d{yyyyMMdd_HHmmss}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%C{2}.%M:%L] %-5level - %msg%n"/>
+            <SizeBasedTriggeringPolicy size="100MB"/>
+        </RollingFile>
+        <RollingFile name="testFileLogger"  filePattern="${sys:logFilePath}" append="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%C{1}.%M:%L] %-5level - %msg%n"/>
+            <SizeBasedTriggeringPolicy size="100MB"/>
+        </RollingFile>
+        <File name="tmpFileLogger" fileName="./logs/tmp.log" append="false">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%C{1}.%M:%L] %-5level - %msg%n%throwable}${CLR}" disableAnsi="false"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="testLogger" level="all" additivity="false">
+            <AppenderRef ref="testFileLogger" level="debug"/>
+            <AppenderRef ref="consoleLogger" level="warn"/>
+            <AppenderRef ref="fileLogger" level="all"/>
+            <AppenderRef ref="tmpFileLogger" level="all"/>
+        </Logger>
+        <Root level="all">
+            <AppenderRef ref="consoleLogger" level="error"/>
+            <AppenderRef ref="fileLogger" level="all"/>
+            <AppenderRef ref="tmpFileLogger" level="all"/>
+        </Root>
+    </Loggers>
+</Configuration>
