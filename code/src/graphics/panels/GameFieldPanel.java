@@ -63,10 +63,10 @@ public class GameFieldPanel extends JPanel {
         setLayout(new BorderLayout());
 
         //háttér
-        try {
-            backgroundImage = ImageIO.read(new File("res/graphics/sivatag.png"));
+        try { 
+            backgroundImage = ImageIO.read(getClass().getResourceAsStream("/graphics/sivatag.png"));
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("GameFieldPanel Error: "+e.getMessage());
         }
 
         //számolás hogy éppen hanyadik elem

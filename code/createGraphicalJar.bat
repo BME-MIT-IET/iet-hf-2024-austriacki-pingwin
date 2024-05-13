@@ -8,6 +8,7 @@ jar cfm ad4b_proto.jar META-INF/MANIFEST.MF -C bin . -C res log4j2.xml
 
 
 echo Graphical jar fajl keszitese...
-jar cfm lords_of_drukmakor.jar META-INF/MANIFEST_g.MF -C bin . res/log4j2.xml
+
+jar cfm lords_of_drukmakor.jar META-INF/MANIFEST_g.MF -C bin . -C res .
 
 pause

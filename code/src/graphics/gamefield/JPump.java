@@ -5,6 +5,7 @@ import model.fields.Pump;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 /**
  * Pumpát reprezentáló grafikus osztály
@@ -24,11 +25,11 @@ public class JPump extends Vertex {
         color = Color.white;
 
         //Alap és damaged textura betöltése
-        ImageIcon tmpIcon = new ImageIcon("res/graphics/objects/waterpump.png");
+        ImageIcon tmpIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/objects/waterpump.png")));
         Image resizedTmpImage = tmpIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         graphicalImage = new ImageIcon(resizedTmpImage);
 
-        tmpIcon = new ImageIcon("res/graphics/objects/waterpump_damaged.png");
+        tmpIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/objects/waterpump_damaged.png")));
         resizedTmpImage = tmpIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         damagedImage = new ImageIcon(resizedTmpImage);
     }
