@@ -44,6 +44,9 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                     <archive>
                         <manifestFile>META-INF/MANIFEST_g.MF</manifestFile>
                     </archive>
