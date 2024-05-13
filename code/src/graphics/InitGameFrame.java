@@ -194,8 +194,9 @@ public class InitGameFrame extends JDialog implements ActionListener {
             ImageIcon blackandwhiteIcon = null;
             ImageIcon normalIcon = null;
             try {
-                Image normalImage = ImageIO.read(new File("res/graphics/players/" + filename + "_" + i + ".png"));
-                Image blackandwhiteImage = ImageIO.read(new File("res/graphics/players/" + filename + "_bw.png"));
+                Image normalImage = ImageIO.read(getClass().getResourceAsStream("/graphics/players/" + filename + "_" + i + ".png"));
+
+                Image blackandwhiteImage = ImageIO.read(getClass().getResourceAsStream("/graphics/players/" + filename + "_bw.png"));
 
                 normalImage = normalImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
                 blackandwhiteImage = blackandwhiteImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);

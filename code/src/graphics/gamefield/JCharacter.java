@@ -5,6 +5,7 @@ import model.fields.Field;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -31,7 +32,7 @@ public abstract class JCharacter extends GraphicalObjects {
 
         //ha ki van jelölve, jelzi
         if (highlight) {
-            ImageIcon arrowImageIcon=new ImageIcon("res/graphics/arrow.png");
+            ImageIcon arrowImageIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/arrow.png")));
             g2.drawImage(arrowImageIcon.getImage(), center.x-arrowImageIcon.getIconWidth()/2, center.y-graphicalImage.getIconHeight()/2-arrowImageIcon.getIconHeight(), null);
 
         }

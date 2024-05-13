@@ -49,7 +49,7 @@ public class LogHelper {
             System.setProperty("logFilePath", logFilePath); // a fájlnév beállítása rendszer tulajdonságként
 
             //Logger kérése és újratöltése
-            LoggerContext context = Configurator.initialize(null, "log4j2.xml"); // konfigurációs fájl betöltése
+            LoggerContext context = Configurator.initialize(null, "/log4j2.xml"); // konfigurációs fájl betöltése 
             context.reconfigure(); // konfiguráció újratöltése
             LOGGER = LogManager.getLogger("testLogger");
 

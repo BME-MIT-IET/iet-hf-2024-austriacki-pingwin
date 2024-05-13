@@ -1,29 +1,28 @@
 package graphics.gamefield;
 
-import model.fields.Cistern;
+import model.fields.WaterSource;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 /**
- * Ciszternákat reprezentáló grafikus osztály
+ * WaterSourcet reprezentáló grafikus osztály
  */
-public class JCistern extends Vertex {
-    Cistern observedCistern;
-
+public class JWaterSource extends Vertex{
+    WaterSource observedWaterSource;
 
     /**
-     * Létrehozza magát paraméterrel
-     *
-     * @param center hova legyen kirajzolva
+     * Létrehozza magát a kapott helyere
+     * @param center középpontja
      */
-    public JCistern(Point center, Cistern cist) {
-        this.center=center;
-        observedCistern = cist;
-        color = Color.orange;
+    public JWaterSource(Point center, WaterSource ws){
+        super(center);
+        observedWaterSource=ws;
+        color= Color.blue;
 
         //Alap textura betöltése
-        ImageIcon tmpIcon = new ImageIcon("res/graphics/objects/cistern.png");
+        ImageIcon tmpIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/objects/watersource.png")));
         Image resizedTmpImage = tmpIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         graphicalImage = new ImageIcon(resizedTmpImage);
     }
@@ -31,7 +30,6 @@ public class JCistern extends Vertex {
 
     /**
      * Kirajzolja magát
-     *
      * @param g the <code>Graphics</code> object to protect
      */
     @Override

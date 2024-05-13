@@ -6,6 +6,7 @@ import graphics.panels.MainMenuPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 /**
  * Főablakot reprezentáló osztály
@@ -26,10 +27,11 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
 
         try {
-            ImageIcon icon = new ImageIcon("res/graphics/icon.png");
+            ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/icon.png")));
+
             setIconImage(icon.getImage());
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("MainFrame Error: "+e.getMessage());
         }
 
         mainMenuPanel = new MainMenuPanel(this);
