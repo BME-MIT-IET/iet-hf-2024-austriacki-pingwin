@@ -31,10 +31,10 @@ public class ScorePanel extends JPanel implements ActionListener {
 
         //háttér beolvasása
         try {
-            backgroundImage = ImageIO.read(new File("res/graphics/scoremenu.jpg"));
+            backgroundImage = ImageIO.read(getClass().getResourceAsStream("/graphics/scoremenu.jpg"));
             backgroundImage = backgroundImage.getScaledInstance(size.width, size.height, Image.SCALE_SMOOTH);
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("ScorePanel Error: "+e.getMessage());
         }
 
         //felső felirat

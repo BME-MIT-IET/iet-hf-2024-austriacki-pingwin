@@ -31,12 +31,12 @@ public class MainMenuPanel extends JPanel implements ActionListener {
         bStart.addActionListener(this);
 
         //háttér
-        try {
-            backgroundImage = ImageIO.read(new File("res/graphics/mainmenu.png"));
+        try { 
+            backgroundImage = ImageIO.read(getClass().getResourceAsStream("/graphics/mainmenu.png"));
             backgroundImage = backgroundImage.getScaledInstance(frame.getSize().width, frame.getSize().height, Image.SCALE_SMOOTH);
             setPreferredSize(frame.getSize());
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("MainMenuPanel Error: "+e.getMessage());
         }
         setLayout(new FlowLayout(FlowLayout.CENTER, 0, (int) (frame.getSize().height*0.6)));
 

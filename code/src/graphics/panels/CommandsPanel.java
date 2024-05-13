@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A játék vezérlő gombjait tartalmazó, kezelő osztály
@@ -46,7 +47,7 @@ public class CommandsPanel extends JPanel implements ActionListener, MouseListen
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            ImageIcon background = new ImageIcon("res/graphics/hotbarIcons/hotbar_clear.png");
+            ImageIcon background = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/hotbarIcons/hotbar_clear.png")));
             g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), this);
         }
     };
@@ -412,7 +413,8 @@ public class CommandsPanel extends JPanel implements ActionListener, MouseListen
         if (Scale != 0) {
             scale = Scale;
         }
-        ImageIcon normalIcon = new ImageIcon("res/graphics/hotbarIcons/hotbar_" + name + ".png");
+
+        ImageIcon normalIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/hotbarIcons/hotbar_" + name + ".png")));
         button.setIcon(new ImageIcon(normalIcon.getImage().getScaledInstance(w / scale, h / scale, Image.SCALE_SMOOTH)));
     }
 

@@ -4,6 +4,7 @@ import model.fields.WaterSource;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 /**
  * WaterSourcet reprezentáló grafikus osztály
@@ -21,7 +22,7 @@ public class JWaterSource extends Vertex{
         color= Color.blue;
 
         //Alap textura betöltése
-        ImageIcon tmpIcon = new ImageIcon("res/graphics/objects/watersource.png");
+        ImageIcon tmpIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/objects/watersource.png")));
         Image resizedTmpImage = tmpIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         graphicalImage = new ImageIcon(resizedTmpImage);
     }

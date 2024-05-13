@@ -4,6 +4,7 @@ import model.fields.Cistern;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 /**
  * Ciszternákat reprezentáló grafikus osztály
@@ -23,7 +24,7 @@ public class JCistern extends Vertex {
         color = Color.orange;
 
         //Alap textura betöltése
-        ImageIcon tmpIcon = new ImageIcon("res/graphics/objects/cistern.png");
+        ImageIcon tmpIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/graphics/objects/cistern.png")));
         Image resizedTmpImage = tmpIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
         graphicalImage = new ImageIcon(resizedTmpImage);
     }
