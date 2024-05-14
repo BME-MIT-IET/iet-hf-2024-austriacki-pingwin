@@ -16,8 +16,7 @@
         <resource.dir>res/</resource.dir>
         <sonar.organization>bme-mit-iet-org</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.sources>.</sonar.sources>
-        <sonar.inclusions>src/**</sonar.inclusions>
+        <sonar.sources>code</sonar.sources> 
     </properties>
 
     <dependencies>
