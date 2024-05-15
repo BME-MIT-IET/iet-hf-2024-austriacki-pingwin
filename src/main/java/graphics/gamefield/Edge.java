@@ -34,7 +34,7 @@ public class Edge extends GraphicalObjects {
         int epsilon = 150;
         Random rnd=new Random();
         //ha van üres vége, random helyezi el
-        if(this.v1==null) this.v1=new Vertex(new Point(new Random().nextInt(v1.getX() +rnd.nextInt(2*epsilon) - epsilon),new Random().nextInt(v1.getY() +rnd.nextInt(2*epsilon) - epsilon)));
+        if(this.v1==null) this.v1=new Vertex(new Point(rnd.nextInt(v1.getX() +rnd.nextInt(2*epsilon) - epsilon),rnd.nextInt(v1.getY() +rnd.nextInt(2*epsilon) - epsilon)));
         if(this.v2==null) this.v2=new Vertex(new Point( (v1.center.x+rnd.nextInt(2*epsilon) - epsilon),  (v1.center.y+rnd.nextInt(2*epsilon) - epsilon)));
 
 
