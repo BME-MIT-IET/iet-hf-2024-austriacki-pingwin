@@ -47,8 +47,6 @@ public class CommandHelper {
         methodMap.put("slippery", this::slippery);
         methodMap.put("sticky", this::sticky);
         methodMap.put("state", this::state);
-        methodMap.put("save", this::save);
-        methodMap.put("load", this::load);
         methodMap.put("help", this::help);
     }
 
@@ -512,26 +510,6 @@ public class CommandHelper {
         System.out.println("Ciszternába folyt vízmennyiség: " + cistWater);
         System.out.println("Sivatagba folyt vízmennyiség:   " + desWater);
     }
-
-
-    /**
-     * Elmenti a játék állását fájlba.
-     *
-     * @param str argumentumok
-     */
-    public void save(String[] str) {
-        //TODO
-    }
-
-    /**
-     * Betölti egy elmentett játék állását fájlból.
-     *
-     * @param str argumentumok
-     */
-    public void load(String[] str) {
-        //TODO
-    }
-
 
     /**
      * Kiírja a program által elfogadott parancsokat.
