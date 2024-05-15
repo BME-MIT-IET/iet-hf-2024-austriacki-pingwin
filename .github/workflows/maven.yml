@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - statikus-analizis
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
