@@ -244,10 +244,6 @@ public class CommandHelper {
             if (cistWater < desWater) System.out.println("SZABOTŐRÖK NYERTEK!");
             LOGGER.info("A játék véget ért!");
             LOGGER.debug("cisternWater={}; desertWater={}", cistWater, desWater);
-
-            //játékból kilépés
-            //System.exit(0);
-
         }
     }
 
@@ -270,7 +266,8 @@ public class CommandHelper {
      */
 
     public void start(String[] str) {
-        int numOfPlumbers = 2, numOfSaboteurs = 2;
+        int numOfPlumbers = 2;
+        int numOfSaboteurs = 2;
 
         if (str.length >= 2) {
             try {
@@ -326,7 +323,7 @@ public class CommandHelper {
 
     public void pickupPipe(String[] str) {
         Character actCharacter = Game.getInstance().getActCharacter();
-        ArrayList<Field> neighbours = new ArrayList<>(actCharacter.getActField().getNeighbours());//(ArrayList<Field>) actCharacter.getActField().getNeighbours();
+        ArrayList<Field> neighbours = new ArrayList<>(actCharacter.getActField().getNeighbours());
 
         if (actCharacter instanceof Plumber) {
             if (str.length == 0) {
