@@ -13,8 +13,7 @@
         <maven.compiler.target>18</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <resource.dir>res/</resource.dir>
-        <!-- <sonar.organization>bme-mit-iet-org</sonar.organization> -->
-        <sonar.organization>bme-mit-iet</sonar.organization>
+        <sonar.organization>bme-mit-iet-org</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
         <!-- <sonar.java.binaries>target/classes</sonar.java.binaries> -->
     </properties>
