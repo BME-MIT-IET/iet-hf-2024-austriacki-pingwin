@@ -154,9 +154,7 @@ public class Plumber extends Character {
             return false;
         }
         //ha van cső a szerelőnél
-        if (pipe != null) {
-            //ha sikeres a művelet
-            if (actField.placeDownPipe(pipe)) {
+        if (pipe != null && actField.placeDownPipe(pipe)) {
                 pipe = null; //nullázza a nála lévő pipeot
 
                 LOGGER.info("SIKERES - plumber sikeresen lerakott egy csövet");
@@ -164,7 +162,7 @@ public class Plumber extends Character {
                 actionPerformed = true;
                 return true;
             }
-        }
+        
         //ha sikertelen a művelet
         LOGGER.info("SIKERTELEN - plumber nem tudott lerakni csövet");
         return false;

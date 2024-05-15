@@ -192,7 +192,7 @@ public abstract class Character {
     /**
      * Visszaadja a karakter által használható műveletetek
      */
-    public List<String> getCommands() {
+    public ArrayList<String> getCommands() {
         //a parancsok megadása string tömbben
         ArrayList<String> cmds = new ArrayList<>();
         cmds.add("move");
