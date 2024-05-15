@@ -12,7 +12,8 @@ import java.util.Random;
  * Csöveket reprezentáló grafikus osztály
  */
 public class Edge extends GraphicalObjects {
-    Vertex v1, v2; //csomópontok amiket összeköt
+    Vertex v1;
+    Vertex v2; //csomópontok amiket összeköt
 
     //fel vannak-e véve a végek
     boolean v1PickedUp = false;
@@ -33,7 +34,7 @@ public class Edge extends GraphicalObjects {
         int epsilon = 150;
         Random rnd=new Random();
         //ha van üres vége, random helyezi el
-        if(this.v1==null) this.v1=new Vertex(new Point(new Random().nextInt(v1.getX() +rnd.nextInt(2*epsilon) - epsilon),new Random().nextInt(v1.getY() +rnd.nextInt(2*epsilon) - epsilon)));
+        if(this.v1==null) this.v1=new Vertex(new Point(rnd.nextInt(v2.getX() +rnd.nextInt(2*epsilon) - epsilon),rnd.nextInt(v2.getY() +rnd.nextInt(2*epsilon) - epsilon)));
         if(this.v2==null) this.v2=new Vertex(new Point( (v1.center.x+rnd.nextInt(2*epsilon) - epsilon),  (v1.center.y+rnd.nextInt(2*epsilon) - epsilon)));
 
 
@@ -95,7 +96,8 @@ public class Edge extends GraphicalObjects {
         double newX = ((secondPump.getX() + (((firstPump.getX() - secondPump.getX()) / (l) * d)))); // new x of arrowhead position on the line with d distance from end of the line.
         double newY = ((secondPump.getY() + (((firstPump.getY() - secondPump.getY()) / (l) * d)))); // new y of arrowhead position on the line with d distance from end of the line.
 
-        double dx = secondPump.getX() - firstPump.getX(), dy = secondPump.getY() - firstPump.getY();
+        double dx = secondPump.getX() - firstPump.getX();
+        double dy = secondPump.getY() - firstPump.getY();
         double angle = (Math.atan2(dy, dx)); //get angle (Radians) between ours line and x vectors line. (counterclockwise)
         angle = (-1) * Math.toDegrees(angle);// cconvert to degree and reverse it to round clock for better understand what we need to do.
         if (angle < 0) {

@@ -28,6 +28,8 @@ public class InitGameFrame extends JDialog implements ActionListener {
     private HashMap<JButton, ImageIcon> saboteurButtons = new HashMap<>(); //Szabotőrök gombjait és képeit tartalmazza
     private HashMap<JButton, ImageIcon> plumberButtons = new HashMap<>(); //Szerelők gombjait és képeit tartalmazza
 
+    private Random random = new Random(); 
+
     /**
      * konstruktor
      *
@@ -193,6 +195,7 @@ public class InitGameFrame extends JDialog implements ActionListener {
         for (int i = 0; i < 5; i++) {
             ImageIcon blackandwhiteIcon = null;
             ImageIcon normalIcon = null;
+
             try {
                 Image normalImage = ImageIO.read(getClass().getResourceAsStream("/graphics/players/" + filename + "_" + i + ".png"));
 
@@ -207,7 +210,7 @@ public class InitGameFrame extends JDialog implements ActionListener {
 
                 //Random nevek a karakterek képeihez
                 String[] names = new String[]{"Mátyás", "János", "Imre", "Géza", "Béla", "Ubul", "Győző", "Lajos", "Pityu", "Sanyi", "Józsi", "Gyula", "Álmos", "Szundi","Balukapitány","Axel","Benjoe","Botond","Dominika","Bálint1","Bálint2","Domi"};
-                normalIcon.setDescription(names[new Random().nextInt(names.length)]);
+                normalIcon.setDescription(names[this.random.nextInt(names.length)]);
 
             } catch (IOException e) {
                 System.err.println("Hiba az ikonok betöltése során!");
@@ -219,21 +222,26 @@ public class InitGameFrame extends JDialog implements ActionListener {
             button.setRolloverIcon(normalIcon);
             button.setPressedIcon(normalIcon);
             button.setSelectedIcon(normalIcon);
-            button.addActionListener(e -> {
-                if (button.isSelected() && calcSelectedButtons(buttons) == 2) {
-                    Toolkit.getDefaultToolkit().beep(); //legalább 2 mindig legyen
-                    this.setTitle("Válasszon legalább 2-2 játékost!");
-                } else {
-                    button.setSelected(!button.isSelected());
-                    this.setTitle("Írja be a játékosok neveit!");   //Állítsuk vissza a frame címét
-                    //Frissítsük a listát
-                    if (plumbers) updatePanel(plumberPanel, plumberButtonsPanel, plumberPlayers, plumberButtons);
-                    else updatePanel(saboteurPanel, saboteurButtonsPanel, saboteurPlayers, saboteurButtons);
-
-                }
-            });
+            button.addActionListener(e -> buttonActionListener(button, buttons, plumbers));
             buttons.put(button, normalIcon);
             panel.add(button);
+        }
+    }
+
+    /**
+     * Gomb action listenere kiszervezve
+     */
+    private void buttonActionListener(JButton button, HashMap<JButton, ImageIcon> buttons, boolean plumbers) {
+        if (button.isSelected() && calcSelectedButtons(buttons) == 2) {
+            Toolkit.getDefaultToolkit().beep(); //legalább 2 mindig legyen
+            this.setTitle("Válasszon legalább 2-2 játékost!");
+        } else {
+            button.setSelected(!button.isSelected());
+            this.setTitle("Írja be a játékosok neveit!");   //Állítsuk vissza a frame címét
+            //Frissítsük a listát
+            if (plumbers) updatePanel(plumberPanel, plumberButtonsPanel, plumberPlayers, plumberButtons);
+            else updatePanel(saboteurPanel, saboteurButtonsPanel, saboteurPlayers, saboteurButtons);
+
         }
     }
 

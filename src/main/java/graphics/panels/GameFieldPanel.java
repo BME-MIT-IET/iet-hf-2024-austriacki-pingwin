@@ -11,6 +11,7 @@ import model.fields.Cistern;
 import model.fields.Pipe;
 import model.fields.Pump;
 import model.fields.WaterSource;
+import model.fields.ActiveField;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -18,19 +19,20 @@ import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
  * Játékot megjelenítő panel
  */
 public class GameFieldPanel extends JPanel {
-    Image backgroundImage;      //Háttérkép
-    private HashMap<Steppable, Vertex> vertices = new HashMap<>();  //grafikus csúcsok tárolása
-    private HashMap<Pipe, Edge> edges = new HashMap<>();    //grafikus élek tárolása
-    private HashMap<Character, JCharacter> players = new HashMap<>();   //grafikus játékosok tárolása
+    transient Image backgroundImage;      //Háttérkép
+    private transient Map<ActiveField, Vertex> vertices = new HashMap<>();  //grafikus csúcsok tárolása
+    private transient Map<Pipe, Edge> edges = new HashMap<>();    //grafikus élek tárolása
+    private transient Map<Character, JCharacter> players = new HashMap<>();   //grafikus játékosok tárolása
     MainFrame frame;    //parent Frame
     Dimension winSize = new Dimension(1000, 800);   //frame mérete
-
+    private Random random = new Random(); 
     JPanel infobar = new JPanel();
 
 
@@ -79,31 +81,31 @@ public class GameFieldPanel extends JPanel {
             //helyek fixálása
             if (steppable instanceof WaterSource ws) {
                 switch (wsCounter) {
-                    case 0 -> vertices.put(steppable, new JWaterSource(new Point(62, 210), ws));
-                    case 1 -> vertices.put(steppable, new JWaterSource(new Point(82, 615), ws));
-                    case 2 -> vertices.put(steppable, new JWaterSource(new Point(810, 590), ws));
+                    case 0 -> vertices.put((WaterSource)steppable, new JWaterSource(new Point(62, 210), ws));
+                    case 1 -> vertices.put((WaterSource)steppable, new JWaterSource(new Point(82, 615), ws));
+                    case 2 -> vertices.put((WaterSource)steppable, new JWaterSource(new Point(810, 590), ws));
                     default ->
-                            vertices.put(steppable, new JWaterSource(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), ws));
+                            vertices.put((WaterSource)steppable, new JWaterSource(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), ws));
                 }
                 wsCounter++;
             }
             if (steppable instanceof Cistern cist) {
                 switch (cCounter) {
-                    case 0 -> vertices.put(steppable, new JCistern(new Point(830, 220), cist));
-                    case 1 -> vertices.put(steppable, new JCistern(new Point(600, 650), cist));
+                    case 0 -> vertices.put((Cistern)steppable, new JCistern(new Point(830, 220), cist));
+                    case 1 -> vertices.put((Cistern)steppable, new JCistern(new Point(600, 650), cist));
                     default ->
-                            vertices.put(steppable, new JCistern(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), cist));
+                            vertices.put((Cistern)steppable, new JCistern(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), cist));
                 }
                 cCounter++;
             }
             if (steppable instanceof Pump pump) {
                 switch (puCounter) {
-                    case 0 -> vertices.put(steppable, new JPump(new Point(275, 210), pump));
-                    case 1 -> vertices.put(steppable, new JPump(new Point(600, 210), pump));
-                    case 2 -> vertices.put(steppable, new JPump(new Point(820, 430), pump));
-                    case 3 -> vertices.put(steppable, new JPump(new Point(320, 606), pump));
+                    case 0 -> vertices.put((Pump)steppable, new JPump(new Point(275, 210), pump));
+                    case 1 -> vertices.put((Pump)steppable, new JPump(new Point(600, 210), pump));
+                    case 2 -> vertices.put((Pump)steppable, new JPump(new Point(820, 430), pump));
+                    case 3 -> vertices.put((Pump)steppable, new JPump(new Point(320, 606), pump));
                     default ->
-                            vertices.put(steppable, new JPump(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), pump));
+                            vertices.put((Pump)steppable, new JPump(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), pump));
                 }
                 puCounter++;
             }
@@ -188,9 +190,9 @@ public class GameFieldPanel extends JPanel {
                         nV1 = vertices.get(pump.getNeighbours().get(0).getOtherNeighbour(pump)).getCenter();
                         if (pump.getNeighbours().get(1).getOtherNeighbour(pump) != null)
                             nV2 = vertices.get(pump.getNeighbours().get(1).getOtherNeighbour(pump)).getCenter();
-                        vertices.put(steppable, new JPump(new Point((nV1.x + nV2.x) / 2, (nV1.y + nV2.y) / 2), pump));
+                        vertices.put((Pump)steppable, new JPump(new Point((nV1.x + nV2.x) / 2, (nV1.y + nV2.y) / 2), pump));
                     } else {
-                        vertices.put(steppable, new JPump(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), pump));
+                        vertices.put((Pump)steppable, new JPump(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), pump));
                     }
                 }
 
@@ -238,7 +240,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return vertices
      */
-    public HashMap<Steppable, Vertex> getVertices() {
+    public Map<ActiveField, Vertex> getVertices() {
         return vertices;
     }
 
@@ -247,7 +249,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return edges
      */
-    public HashMap<Pipe, Edge> getEdges() {
+    public Map<Pipe, Edge> getEdges() {
         return edges;
     }
 
@@ -256,7 +258,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return players
      */
-    public HashMap<Character, JCharacter> getPlayers() {
+    public Map<Character, JCharacter> getPlayers() {
         return players;
     }
 }
