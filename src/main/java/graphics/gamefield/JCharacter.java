@@ -14,7 +14,7 @@ import java.util.Random;
 public abstract class JCharacter extends GraphicalObjects {
     protected Character observedCharacter;
     private Field previousField;
-
+    private Random random = new Random(); 
     protected String playerName;        //Játékos neve
 
     Point vector;   //center-től eltolásvektor
@@ -48,7 +48,7 @@ public abstract class JCharacter extends GraphicalObjects {
 
         //Ha másik elemre lépett rakjuk picit arrébb
         if (observedCharacter.getActField() != previousField||previousField==null) {
-            vector = new Point(new Random().nextInt(2 * epsilon) - epsilon, new Random().nextInt(2 * epsilon) - epsilon);
+            vector = new Point(this.random.nextInt(2 * epsilon) - epsilon, this.random.nextInt(2 * epsilon) - epsilon);
             previousField = observedCharacter.getActField();
         }
 

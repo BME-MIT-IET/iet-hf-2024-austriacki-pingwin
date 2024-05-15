@@ -28,6 +28,8 @@ public class InitGameFrame extends JDialog implements ActionListener {
     private HashMap<JButton, ImageIcon> saboteurButtons = new HashMap<>(); //Szabotőrök gombjait és képeit tartalmazza
     private HashMap<JButton, ImageIcon> plumberButtons = new HashMap<>(); //Szerelők gombjait és képeit tartalmazza
 
+    private Random random = new Random(); 
+
     /**
      * konstruktor
      *
@@ -207,7 +209,7 @@ public class InitGameFrame extends JDialog implements ActionListener {
 
                 //Random nevek a karakterek képeihez
                 String[] names = new String[]{"Mátyás", "János", "Imre", "Géza", "Béla", "Ubul", "Győző", "Lajos", "Pityu", "Sanyi", "Józsi", "Gyula", "Álmos", "Szundi","Balukapitány","Axel","Benjoe","Botond","Dominika","Bálint1","Bálint2","Domi"};
-                normalIcon.setDescription(names[new Random().nextInt(names.length)]);
+                normalIcon.setDescription(names[this.random.nextInt(names.length)]);
 
             } catch (IOException e) {
                 System.err.println("Hiba az ikonok betöltése során!");
