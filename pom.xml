@@ -15,7 +15,7 @@
         <resource.dir>res/</resource.dir>
         <sonar.organization>bme-mit-iet-org</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
-        <!-- <sonar.sources>src/main/java</sonar.sources> -->
+        <sonar.sources>src/</sonar.sources>
         <!-- <sonar.sources>**/*.java</sonar.sources> -->
         <!-- <sonar.inclusions>**/*.java</sonar.inclusions> -->
         <!-- <sonar.java.binaries>target/classes</sonar.java.binaries> -->
