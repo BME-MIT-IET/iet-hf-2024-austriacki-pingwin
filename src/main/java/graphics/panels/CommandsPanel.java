@@ -186,19 +186,7 @@ public class CommandsPanel extends JPanel implements ActionListener, MouseListen
         if (clickedButton == bDamage) ch.damage(null);
         if (clickedButton == bSlippery) ch.slippery(null);
         if (clickedButton == bSticky) ch.sticky(null);
-        if (clickedButton == bPlacePipe) {
-            Field actField = Game.getInstance().getActCharacter().getActField();
-            Vertex actVertex = GameFieldPanel.getInstance().getVertices().get(actField); //aktuális mező grafikus objektuma
-            //aktuális grafikus cső és játékos lekérdezése
-            Pipe actPipe = ((Plumber) Game.getInstance().getActCharacter()).getPipe();
-            Edge actJPipe = GameFieldPanel.getInstance().getEdges().get(actPipe);
-            //ha nincs tele a mező lerakjuk a csövet
-            if (actJPipe != null && !((ActiveField) Game.getInstance().getActCharacter().getActField()).isFull()) {
-                actJPipe.placedDownPipe(actVertex);
-            }
-            ch.placedownPipe(null);
-            GameFieldPanel.getInstance().repaint();
-        }
+        if (clickedButton == bPlacePipe) placePipeButtonPressed();
         if (clickedButton == bPickUpPump) ch.pickupPump(null);
         if (clickedButton == bPlacePump) ch.placedownPump(null);
 
@@ -221,34 +209,60 @@ public class CommandsPanel extends JPanel implements ActionListener, MouseListen
         }
 
         if (clickedButton == bNextPlayer) { //Akció gombok resetelése és játék léptetése
-            change = false;
-            pickUpPipe = false;
-            move = false;
-            ch.nextplayer(null);
-
-            GameFieldPanel.getInstance().infobar.removeAll();
-            ImageIcon img = GameFieldPanel.getInstance().getPlayers().get(Game.getInstance().getActCharacter()).getPlayerIcon();
-            JLabel text = new JLabel("Játékos: " + img.getDescription() + "        Szerelők pontjai: " + Game.getInstance().getPpo().getCisternWater() + "        Szabotőrök pontjai: " + Game.getInstance().getSpo().getDesertWater());
-            text.setFont(new Font("Aerial", Font.BOLD, 30));
-            text.setForeground(Color.white);
-            GameFieldPanel.getInstance().infobar.add(text);
-
-            if (Game.getInstance().isGameOver()) {
-                frame.getContentPane().removeAll();
-
-                frame.add(new ScorePanel(frame));
-                frame.revalidate();
-                frame.repaint();
-                frame.pack();
-            }
+            nextPlayerButtonPressed();
         }
-        if (clickedButton != bChange && clickedButton != bMove && clickedButton != bPickUpPipe && !chooseButtons.contains(clickedButton)) { //chooseButtonok reseteléséhez, ha pl move után nem chooseButtont nyom
+        boolean shouldResetChooseButton = clickedButton != bChange && clickedButton != bMove && clickedButton != bPickUpPipe && !chooseButtons.contains(clickedButton);
+        if (shouldResetChooseButton) { //chooseButtonok reseteléséhez, ha pl move után nem chooseButtont nyom
             change = false;
             pickUpPipe = false;
             move = false;
         }
         GameFieldPanel.getInstance().repaint();
         checkButtons(); //Lehetséges akciók alapján gombok frissítése
+    }
+
+    /**
+     * Cső lehelyezését gomb megvalósítása
+     */
+    private void placePipeButtonPressed() {
+        Field actField = Game.getInstance().getActCharacter().getActField();
+        Vertex actVertex = GameFieldPanel.getInstance().getVertices().get(actField); //aktuális mező grafikus objektuma
+        //aktuális grafikus cső és játékos lekérdezése
+        Pipe actPipe = ((Plumber) Game.getInstance().getActCharacter()).getPipe();
+        Edge actJPipe = GameFieldPanel.getInstance().getEdges().get(actPipe);
+        //ha nincs tele a mező lerakjuk a csövet
+        if (actJPipe != null && !((ActiveField) Game.getInstance().getActCharacter().getActField()).isFull()) {
+            actJPipe.placedDownPipe(actVertex);
+        }
+        ch.placedownPipe(null);
+        GameFieldPanel.getInstance().repaint();
+    }
+
+    /**
+     * Következő játékos gomb megvalósítása
+     * Akció gombok resetelése és játék léptetése
+     */
+    private void nextPlayerButtonPressed() {
+        change = false;
+        pickUpPipe = false;
+        move = false;
+        ch.nextplayer(null);
+
+        GameFieldPanel.getInstance().infobar.removeAll();
+        ImageIcon img = GameFieldPanel.getInstance().getPlayers().get(Game.getInstance().getActCharacter()).getPlayerIcon();
+        JLabel text = new JLabel("Játékos: " + img.getDescription() + "        Szerelők pontjai: " + Game.getInstance().getPpo().getCisternWater() + "        Szabotőrök pontjai: " + Game.getInstance().getSpo().getDesertWater());
+        text.setFont(new Font("Aerial", Font.BOLD, 30));
+        text.setForeground(Color.white);
+        GameFieldPanel.getInstance().infobar.add(text);
+
+        if (Game.getInstance().isGameOver()) {
+            frame.getContentPane().removeAll();
+
+            frame.add(new ScorePanel(frame));
+            frame.revalidate();
+            frame.repaint();
+            frame.pack();
+        }
     }
 
     /**

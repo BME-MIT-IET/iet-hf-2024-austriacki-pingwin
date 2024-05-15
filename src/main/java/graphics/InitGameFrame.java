@@ -231,7 +231,7 @@ public class InitGameFrame extends JDialog implements ActionListener {
     /**
      * Gomb action listenere kiszervezve
      */
-    public void buttonActionListener(JButton button, HashMap<JButton, ImageIcon> buttons, boolean plumbers) {
+    private void buttonActionListener(JButton button, HashMap<JButton, ImageIcon> buttons, boolean plumbers) {
         if (button.isSelected() && calcSelectedButtons(buttons) == 2) {
             Toolkit.getDefaultToolkit().beep(); //legalább 2 mindig legyen
             this.setTitle("Válasszon legalább 2-2 játékost!");
