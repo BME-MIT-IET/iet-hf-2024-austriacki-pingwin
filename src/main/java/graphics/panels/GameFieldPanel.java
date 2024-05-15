@@ -25,10 +25,10 @@ import java.util.Random;
  * Játékot megjelenítő panel
  */
 public class GameFieldPanel extends JPanel {
-    Image backgroundImage;      //Háttérkép
-    private HashMap<ActiveField, Vertex> vertices = new HashMap<>();  //grafikus csúcsok tárolása
-    private HashMap<Pipe, Edge> edges = new HashMap<>();    //grafikus élek tárolása
-    private HashMap<Character, JCharacter> players = new HashMap<>();   //grafikus játékosok tárolása
+    transient Image backgroundImage;      //Háttérkép
+    private transient Map<ActiveField, Vertex> vertices = new HashMap<>();  //grafikus csúcsok tárolása
+    private transient Map<Pipe, Edge> edges = new HashMap<>();    //grafikus élek tárolása
+    private transient Map<Character, JCharacter> players = new HashMap<>();   //grafikus játékosok tárolása
     MainFrame frame;    //parent Frame
     Dimension winSize = new Dimension(1000, 800);   //frame mérete
     private Random random = new Random(); 
@@ -239,7 +239,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return vertices
      */
-    public HashMap<ActiveField, Vertex> getVertices() {
+    public Map<ActiveField, Vertex> getVertices() {
         return vertices;
     }
 
@@ -248,7 +248,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return edges
      */
-    public HashMap<Pipe, Edge> getEdges() {
+    public Map<Pipe, Edge> getEdges() {
         return edges;
     }
 
@@ -257,7 +257,7 @@ public class GameFieldPanel extends JPanel {
      *
      * @return players
      */
-    public HashMap<Character, JCharacter> getPlayers() {
+    public Map<Character, JCharacter> getPlayers() {
         return players;
     }
 }
