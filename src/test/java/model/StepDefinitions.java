@@ -220,9 +220,53 @@ public class StepDefinitions {
         success = false;
     }
 
+    @Given("the player is on a pump connected to a pipe")
+    public void the_player_is_on_a_pump_connected_to_a_pipe() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pump2 = new Pump();
+        pump2.addNeighbourField(pipe);
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+        player = new Plumber(pump);
+        Game.getInstance().getNullGame();
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addSteppable(pump2);
+        Game.getInstance().addPipe(pipe);
+    }
 
+    @When("the player deteaches the pipe")
+    public void the_player_deteaches_the_pipe() {
+        success = player.pickPipe(pipe);
+    }
 
+    @Then("the pipe is deteached")
+    public void the_pipe_is_deteached() {
+        assertEquals(true, success);
+        success = false;
+    }
 
+    @Given("the player is on a pump connected to a pipe that has one free end")
+    public void the_player_is_on_a_pump_connected_to_a_pipe_that_has_one_free_end() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+        player = new Plumber(pump);
+        Game.getInstance().getNullGame();
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addPipe(pipe);
+    }
+
+    @Then("the pipe is picked up")
+    public void the_pipe_is_picked_up() {
+        assertEquals(true, success);
+        success = false;
+    }
 
 
 
