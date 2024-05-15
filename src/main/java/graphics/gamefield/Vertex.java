@@ -77,7 +77,7 @@ public class Vertex extends GraphicalObjects implements MouseListener, MouseMoti
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        //az interface megvalósítása miatt kell, de nem használjuk
     }
 
     @Override
@@ -99,6 +99,7 @@ public class Vertex extends GraphicalObjects implements MouseListener, MouseMoti
 
     @Override
     public void mouseMoved(MouseEvent e) {
+        //az interface megvalósítása miatt kell, de nem használjuk
     }
 
 

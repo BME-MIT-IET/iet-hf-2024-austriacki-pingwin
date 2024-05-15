@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
      */
     public MainFrame() {
         super("Lords of Drukmákor");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(800, 800);
         setLocationRelativeTo(null);
         setResizable(false);
