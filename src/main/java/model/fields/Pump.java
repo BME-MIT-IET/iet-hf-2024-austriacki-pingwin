@@ -24,13 +24,13 @@ import java.util.Random;
  */
 public class Pump extends ActiveField {
     private static final Logger LOGGER = LogHelper.getLogger();
+    private Random random = new Random(); 
 
     private final int tankCapacity = 5;   //A pumpa belső tárolójának maximális kapacitását tárolja.
     private int tankLevel;      //A pumpa belső tárolójának aktuális telítettségét tárolja.
     private Pipe input;         //A pumpa bemenetén lévő csövet tárolja, amiből kaphat vizet.
     private Pipe output;        //A pumpa kimenetén lévő csövet tárolja, amibe továbbíthat vizet.
     boolean pumpIn = true;        //Pumpa aktuális step-je, true esetén az input csőről szívja a vizet, false esetén az output csőbe nyomja.
-
 
     /**
      * Pump állapota
@@ -82,8 +82,8 @@ public class Pump extends ActiveField {
      */
     public void step() {
         if(!Game.getInstance().isTrueBOOL() && !Game.getInstance().isFalseBOOL()){
-            int random = new Random().nextInt(100);
-            if(5 > random) isDamaged=true;
+            int random100 = this.random.nextInt(100);
+            if(5 > random100) isDamaged=true;
         }
         if(Game.getInstance().isTrueBOOL()){
             LOGGER.debug("A pumpa el lett rontva");
