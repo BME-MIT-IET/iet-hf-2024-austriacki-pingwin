@@ -3,6 +3,7 @@ package model;
 import io.cucumber.java.de.Gegebensei;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.cucumber.java.lu.a;
 import model.*;
 import model.characters.*;
 import model.characters.Plumber;
@@ -15,9 +16,15 @@ public class StepDefinitions {
 
     private Pump pump;
     private Pump pump2;
+
+    private Cistern cistern;
+
     private Pipe pipe;
+
     private Plumber player;
     private Saboteur player2;
+
+    boolean success = false;
 
     @Given("player is standing on a pump next to a pipe")
     public void player_is_standing_on_a_pump_next_to_a_pipe() {
@@ -136,5 +143,88 @@ public class StepDefinitions {
         Game.getInstance().addSteppable(pump);
         Game.getInstance().addPipe(pipe);
     }
+
+
+    //Build Features
+
+    @Given("the player is on a cistern")
+    public void the_player_is_on_a_cistern() {
+        Game.getInstance().getNullGame();
+        cistern = new Cistern();
+        player = new Plumber(cistern);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(cistern);
+    }
+    @When("the player picks up a pump")
+    public void the_player_picks_up_a_pump() {
+        success = player.pickPump();
+    }
+
+    @Then("the player has a pump")
+    public void the_player_has_a_pump() {
+        assertEquals(true, success);
+        success = false;
+    }
+
+    @Given("the player already has a pump")
+    public void the_player_already_has_a_pump() {
+        Game.getInstance().getNullGame();
+        cistern = new Cistern();
+        player = new Plumber(cistern);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(cistern);
+        player.pickPump();
+    }
+
+    @Given("the player is on a pipe")
+    public void the_player_is_on_a_pipe() {
+        pipe = new Pipe();
+        pipe.connectTo(cistern);
+        cistern.addNeighbourField(pipe);
+        Game.getInstance().addPipe(pipe);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+        player.move(pipe);
+    }
+
+    @Given("the player waits a turn")
+    public void the_player_waits_a_turn() {
+        Game.getInstance().nextCharacter();
+    }
+
+    @When("the player places the pump")
+    public void the_player_places_the_pump() {
+        success = player.placePump();
+    }
+
+    @Then("the pump is placed")
+    public void the_pump_is_placed() {
+        assertEquals(true, success);
+        success = false;
+    }
+
+
+    @Given("the player is on a pipe with no pump")
+    public void the_player_is_on_a_pipe_with_no_pump() {
+        Game.getInstance().getNullGame();
+        pipe = new Pipe();
+        player = new Plumber(pipe);
+        Game.getInstance().addPipe(pipe);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+    }
+
+    @Then("the pump is not placed")
+    public void the_pump_is_not_placed() {
+        assertEquals(false, success);
+        success = false;
+    }
+
+
+
+
+
+
+
 
 }
