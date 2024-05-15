@@ -1,5 +1,6 @@
 package model;
 
+import io.cucumber.java.de.Gegebensei;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import model.*;
@@ -10,22 +11,27 @@ import io.cucumber.java.en.Then;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 
-
 public class StepDefinitions {
 
     private Pump pump;
+    private Pump pump2;
     private Pipe pipe;
     private Plumber player;
+    private Saboteur player2;
 
     @Given("player is standing on a pump next to a pipe")
     public void player_is_standing_on_a_pump_next_to_a_pipe() {
         pump = new Pump();
         pipe = new Pipe();
+        pipe.connectTo(pump);
         pump.addNeighbourField(pipe);
         player = new Plumber(pump);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addPipe(pipe);
     }
 
-    @When("steps on the pipe")
+    @When("player steps on the pipe")
     public void steps_on_the_pipe() {
         player.move(pipe);
     }
@@ -35,86 +41,100 @@ public class StepDefinitions {
         assertEquals(pipe, player.getActField());
     }
 
-    @Given("player is standing on a pump next to a slippery pipe")
-    public void player_is_standing_on_a_pump_next_to_a_slippery_pipe() {
-        // Implement the logic for this step
-        System.out.println("Given: player is standing on a pump next to a slippery pipe");
+    @Given("player is standing on a pump connected to a pipe which is connected to another pump, GameRandom is {int}")
+    public void player_is_standing_on_a_pump_connected_to_a_pipe_which_is_connected_to_another_pump(int isRandom) {
+        pump = new Pump();
+        pipe = new Pipe();
+        pump2 = new Pump();
+        pipe.connectTo(pump);
+        pipe.connectTo(pump2);
+        pump.addNeighbourField(pipe);
+        pump2.addNeighbourField(pipe);
+        player = new Plumber(pump);
+        Game.getInstance().testHelper(isRandom == 1 ? true : false); //Random kikapcsolása, hogy megfellő oldalra csússzon
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addSteppable(pump2);
+        Game.getInstance().addPipe(pipe);
+    }
+
+    @Given("the pipe is slippery")
+    public void the_pipe_is_slippery() {
+        pipe.makeSlippery();
+    }
+
+    @When("player steps on the slippery pipe")
+    public void steps_on_the_slippery_pipe() {
+        player.move(pipe);
     }
 
     @Then("player should slide to the other side of the pipe")
     public void player_should_slide_to_the_other_side_of_the_pipe() {
-        // Implement the logic for this step
-        System.out.println("Then: player should slide to the other side of the pipe");
+        assertEquals(pump2, player.getActField());
     }
 
     @Then("player should slide to his original position")
     public void player_should_slide_to_his_original_position() {
-        // Implement the logic for this step
-        System.out.println("Then: player should slide to his original position");
+        assertEquals(pump, player.getActField());
     }
 
-    @Given("player is standing on a pump next to a sticky pipe")
-    public void player_is_standing_on_a_pump_next_to_a_sticky_pipe() {
-        // Implement the logic for this step
-        System.out.println("Given: player is standing on a pump next to a sticky pipe");
+    @Given("the pipe is sticky")
+    public void the_pipe_is_sticky() {
+        pipe.makeSticky();
+    }
+    
+    @When("player tries to move")
+    public void player_tries_to_move() {
+        player.move(pump);
+    }
+    @Then("player should be stuck on the pipe")
+    public void player_should_be_stuck_on_the_pipe() {
+        assertEquals(pipe, player.getActField());
+    }
+   
+    @Given("the pipe is blocked by another player")
+    public void the_pipe_is_blocked_by_another_player() {
+        player2 = new Saboteur(pipe);
+        Game.getInstance().addCharacter(player2);
+    }
+   
+    @Then("player should not be able to step on the pipe")
+    public void player_should_not_be_able_to_step_on_the_pipe() {
+        assertEquals(pump, player.getActField());
     }
 
-    @Then("player should stick to the pipe")
-    public void player_should_stick_to_the_pipe() {
-        // Implement the logic for this step
-        System.out.println("Then: player should stick to the pipe");
+    @Given("player is standing on a pipe next to a pump")
+    public void player_is_standing_on_a_pipe_next_to_a_pump() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+        player = new Plumber(pipe);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addPipe(pipe);
+    }
+    @When("player steps on the pump")
+    public void player_steps_on_the_pump() {
+        player.move(pump);
+    }
+    @Then("player should be on the pump")
+    public void player_should_be_on_the_pump() {
+        assertEquals(pump, player.getActField());
     }
 
-    @When("another player is on the pipe")
-    public void another_player_is_on_the_pipe() {
-        // Implement the logic for this step
-        System.out.println("When: another player is on the pipe");
+    @Given("player is standing on a sticky pipe next to a pump")
+    public void player_is_standing_on_a_sticky_pipe_next_to_a_pump() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+        player = new Plumber(pump);
+        pipe.makeSticky();
+        player.move(pipe);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addPipe(pipe);
     }
 
-    @When("tries to step on the pipe but can't")
-    public void tries_to_step_on_the_pipe_but_can_t() {
-        // Implement the logic for this step
-        System.out.println("When: tries to step on the pipe but can't");
-    }
-
-    @Then("player should stay on the pump")
-    public void player_should_stay_on_the_pump() {
-        
-    }
-
-    @Given("player is standing on a pump next to an active element")
-    public void player_is_standing_on_a_pump_next_to_an_active_element() {
-        // Implement the logic for this step
-        System.out.println("Given: player is standing on a pump next to an active element");
-    }
-
-    @When("tries to step on the element")
-    public void tries_to_step_on_the_element() {
-        // Implement the logic for this step
-        System.out.println("When: tries to step on the element");
-    }
-
-    @Then("player should step on the element")
-    public void player_should_step_on_the_element() {
-        // Implement the logic for this step
-        System.out.println("Then: player should step on the element");
-    }
-
-    @When("player steps on the sticky pipe")
-    public void player_steps_on_the_sticky_pipe() {
-        // Implement the logic for this step
-        System.out.println("When: player steps on the sticky pipe");
-    }
-
-    @When("tries to step back to the pump")
-    public void tries_to_step_back_to_the_pump() {
-        // Implement the logic for this step
-        System.out.println("When: tries to step back to the pump");
-    }
-
-    @Then("player should stay on the pipe")
-    public void player_should_stay_on_the_pipe() {
-        // Implement the logic for this step
-        System.out.println("Then: player should stay on the pipe");
-    }
 }
