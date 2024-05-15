@@ -15,9 +15,6 @@
         <resource.dir>res/</resource.dir>
         <sonar.organization>bme-mit-iet-org</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
-        <sonar.sources>**/*.java</sonar.sources>
-        <sonar.inclusions>**/*.java</sonar.inclusions>
-        <sonar.java.binaries>target/classes</sonar.java.binaries>
     </properties>
 
     <dependencies>
@@ -55,11 +52,6 @@
                         <manifestFile>META-INF/MANIFEST_g.MF</manifestFile>
                     </archive>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.11.0.3922</version>
             </plugin>
         </plugins>
         <resources>
