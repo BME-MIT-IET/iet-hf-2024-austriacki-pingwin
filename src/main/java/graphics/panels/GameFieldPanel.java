@@ -30,7 +30,7 @@ public class GameFieldPanel extends JPanel {
     private HashMap<Character, JCharacter> players = new HashMap<>();   //grafikus játékosok tárolása
     MainFrame frame;    //parent Frame
     Dimension winSize = new Dimension(1000, 800);   //frame mérete
-
+    private Random random = new Random(); 
     JPanel infobar = new JPanel();
 
 
@@ -83,7 +83,7 @@ public class GameFieldPanel extends JPanel {
                     case 1 -> vertices.put(steppable, new JWaterSource(new Point(82, 615), ws));
                     case 2 -> vertices.put(steppable, new JWaterSource(new Point(810, 590), ws));
                     default ->
-                            vertices.put(steppable, new JWaterSource(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), ws));
+                            vertices.put(steppable, new JWaterSource(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), ws));
                 }
                 wsCounter++;
             }
@@ -92,7 +92,7 @@ public class GameFieldPanel extends JPanel {
                     case 0 -> vertices.put(steppable, new JCistern(new Point(830, 220), cist));
                     case 1 -> vertices.put(steppable, new JCistern(new Point(600, 650), cist));
                     default ->
-                            vertices.put(steppable, new JCistern(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), cist));
+                            vertices.put(steppable, new JCistern(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), cist));
                 }
                 cCounter++;
             }
@@ -103,7 +103,7 @@ public class GameFieldPanel extends JPanel {
                     case 2 -> vertices.put(steppable, new JPump(new Point(820, 430), pump));
                     case 3 -> vertices.put(steppable, new JPump(new Point(320, 606), pump));
                     default ->
-                            vertices.put(steppable, new JPump(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), pump));
+                            vertices.put(steppable, new JPump(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), pump));
                 }
                 puCounter++;
             }
@@ -190,7 +190,7 @@ public class GameFieldPanel extends JPanel {
                             nV2 = vertices.get(pump.getNeighbours().get(1).getOtherNeighbour(pump)).getCenter();
                         vertices.put(steppable, new JPump(new Point((nV1.x + nV2.x) / 2, (nV1.y + nV2.y) / 2), pump));
                     } else {
-                        vertices.put(steppable, new JPump(new Point(new Random().nextInt(winSize.width), new Random().nextInt(winSize.width)), pump));
+                        vertices.put(steppable, new JPump(new Point(this.random.nextInt(winSize.width), this.random.nextInt(winSize.width)), pump));
                     }
                 }
 
