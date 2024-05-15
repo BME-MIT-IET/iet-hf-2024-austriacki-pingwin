@@ -2,7 +2,7 @@ name: SonarCloud
 on:
   push:
     branches:
-      - main
+      [main, statikus-analizis]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
