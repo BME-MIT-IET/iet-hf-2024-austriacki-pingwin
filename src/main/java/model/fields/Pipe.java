@@ -162,7 +162,7 @@ public class Pipe extends Field implements CountableObserved {
             if (isSlippery) {
                 LOGGER.debug("A karakter csúszós csőre lépett");
                 isSlippery = false;
-                this.random.nextInt(activeFields.size());
+                int randomFieldNumber = this.random.nextInt(activeFields.size());
                 if (Game.getInstance().isFalseBOOL()) {
                     if (activeFields.get(0) == ch.getActField()) {
                         LOGGER.debug("A karakter visszakerült oda ahonnan indult!");
@@ -181,9 +181,9 @@ public class Pipe extends Field implements CountableObserved {
                         return activeFields.get(0).acceptCharacter(ch);
                     }
                 }
-                if (activeFields.get(random) != null) {
+                if (activeFields.get(randomFieldNumber) != null) {
                     LOGGER.debug("A karakter a csúszós cső egyik oldalára került");
-                    return activeFields.get(random).acceptCharacter(ch);
+                    return activeFields.get(randomFieldNumber).acceptCharacter(ch);
                 }
             } else {
                 characters.add(ch);
