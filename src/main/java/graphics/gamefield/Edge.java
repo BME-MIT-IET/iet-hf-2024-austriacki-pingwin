@@ -12,7 +12,8 @@ import java.util.Random;
  * Csöveket reprezentáló grafikus osztály
  */
 public class Edge extends GraphicalObjects {
-    Vertex v1, v2; //csomópontok amiket összeköt
+    Vertex v1;
+    Vertex v2; //csomópontok amiket összeköt
 
     //fel vannak-e véve a végek
     boolean v1PickedUp = false;
@@ -95,7 +96,8 @@ public class Edge extends GraphicalObjects {
         double newX = ((secondPump.getX() + (((firstPump.getX() - secondPump.getX()) / (l) * d)))); // new x of arrowhead position on the line with d distance from end of the line.
         double newY = ((secondPump.getY() + (((firstPump.getY() - secondPump.getY()) / (l) * d)))); // new y of arrowhead position on the line with d distance from end of the line.
 
-        double dx = secondPump.getX() - firstPump.getX(), dy = secondPump.getY() - firstPump.getY();
+        double dx = secondPump.getX() - firstPump.getX();
+        double dy = secondPump.getY() - firstPump.getY();
         double angle = (Math.atan2(dy, dx)); //get angle (Radians) between ours line and x vectors line. (counterclockwise)
         angle = (-1) * Math.toDegrees(angle);// cconvert to degree and reverse it to round clock for better understand what we need to do.
         if (angle < 0) {
