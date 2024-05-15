@@ -15,10 +15,10 @@
         <resource.dir>res/</resource.dir>
         <sonar.organization>bme-mit-iet-org</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
-        <sonar.sources>**/*.java</sonar.sources>
+        <sonar.sources>src/main/java</sonar.sources>
+        <!-- <sonar.sources>**/*.java</sonar.sources> -->
         <sonar.inclusions>**/*.java</sonar.inclusions>
         <!-- <sonar.java.binaries>target/classes</sonar.java.binaries> -->
-        <!-- <sonar.sources>src/main/java</sonar.sources> -->
     </properties>
 
     <dependencies>
@@ -58,25 +58,10 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
             </plugin>
-        </plugins>
         <resources>
             <resource>
                 <directory>${resource.dir}</directory>
