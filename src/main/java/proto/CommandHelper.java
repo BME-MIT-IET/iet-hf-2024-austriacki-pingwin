@@ -47,8 +47,6 @@ public class CommandHelper {
         methodMap.put("slippery", this::slippery);
         methodMap.put("sticky", this::sticky);
         methodMap.put("state", this::state);
-        methodMap.put("save", this::save);
-        methodMap.put("load", this::load);
         methodMap.put("help", this::help);
     }
 
@@ -246,10 +244,6 @@ public class CommandHelper {
             if (cistWater < desWater) System.out.println("SZABOTŐRÖK NYERTEK!");
             LOGGER.info("A játék véget ért!");
             LOGGER.debug("cisternWater={}; desertWater={}", cistWater, desWater);
-
-            //játékból kilépés
-            //System.exit(0);
-
         }
     }
 
@@ -272,7 +266,8 @@ public class CommandHelper {
      */
 
     public void start(String[] str) {
-        int numOfPlumbers = 2, numOfSaboteurs = 2;
+        int numOfPlumbers = 2;
+        int numOfSaboteurs = 2;
 
         if (str.length >= 2) {
             try {
@@ -328,7 +323,7 @@ public class CommandHelper {
 
     public void pickupPipe(String[] str) {
         Character actCharacter = Game.getInstance().getActCharacter();
-        ArrayList<Field> neighbours = new ArrayList<>(actCharacter.getActField().getNeighbours());//(ArrayList<Field>) actCharacter.getActField().getNeighbours();
+        ArrayList<Field> neighbours = new ArrayList<>(actCharacter.getActField().getNeighbours());
 
         if (actCharacter instanceof Plumber) {
             if (str.length == 0) {
@@ -512,26 +507,6 @@ public class CommandHelper {
         System.out.println("Ciszternába folyt vízmennyiség: " + cistWater);
         System.out.println("Sivatagba folyt vízmennyiség:   " + desWater);
     }
-
-
-    /**
-     * Elmenti a játék állását fájlba.
-     *
-     * @param str argumentumok
-     */
-    public void save(String[] str) {
-        //TODO
-    }
-
-    /**
-     * Betölti egy elmentett játék állását fájlból.
-     *
-     * @param str argumentumok
-     */
-    public void load(String[] str) {
-        //TODO
-    }
-
 
     /**
      * Kiírja a program által elfogadott parancsokat.

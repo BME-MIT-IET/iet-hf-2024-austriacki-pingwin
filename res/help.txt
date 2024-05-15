@@ -48,9 +48,3 @@
 
 [state]
 	Leírás: Kiírja a különböző pályaelemeket és azok állapotát (csúszós, ki-be menet egy pumpán, stb.), szomszédjait, valamint a csapatok pontszámát. Összes kommand és melyiket milyen pályaelemen lehet alkalmazni.
-
-[save]
-	Leírás: Elmenti a játék állását fájlba.
-
-[load]
-	Leírás: Betölti egy elmentett játék állását fájlból. 
