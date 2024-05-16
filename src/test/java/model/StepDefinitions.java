@@ -268,7 +268,59 @@ public class StepDefinitions {
         success = false;
     }
 
+    @Given("the player is on a pump with a pipe")
+    public void the_player_is_on_a_pump_with_a_pipe() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+        pump2 = new Pump();
+        pipe.connectTo(pump2);
+        player = new Plumber(pump);
+        Game.getInstance().getNullGame();
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+        Game.getInstance().addSteppable(pump);
+        Game.getInstance().addSteppable(pump2);
+        Game.getInstance().addPipe(pipe);
+        player.pickPipe(pipe);
+        Game.getInstance().nextCharacter();
+    }
+    @When("the player attaches the pipe")
+    public void the_player_attaches_the_pipe() {
+       success = player.placePipe();
+    }
+    @Then("the pipe is attached")
+    public void the_pipe_is_attached() {
+        assertEquals(true, success);
+        success = false;
+    }
+    
+    @Given("the player is on a pump with a pipe that has no free end")
+    public void the_player_is_on_a_pump_with_a_pipe_that_has_no_free_end() {
+        pump = new Pump();
+        pipe = new Pipe();
+        pipe.connectTo(pump);
+        pump.addNeighbourField(pipe);
+       
+        Game.getInstance().getNullGame();
 
+        for (int i = 0; i < 7; i++) {
+            Pipe p = new Pipe();
+            p.connectTo(pump);
+            pump.addNeighbourField(p);
+            Game.getInstance().addPipe(p);
+        }
+        player = new Plumber(pump);
+        Game.getInstance().addCharacter(player);
+        Game.getInstance().setActCharacter(player);
+    }
+
+    @Then("the pipe is not attached")
+    public void the_pipe_is_not_attached() {
+        assertEquals(false, success);
+        success = false;
+    }
 
 
 }

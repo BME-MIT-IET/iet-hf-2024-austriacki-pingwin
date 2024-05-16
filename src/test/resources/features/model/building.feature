@@ -27,3 +27,13 @@ Scenario: Player deteaches pipe's end from element he is standing on but the the
     Given the player is on a pump connected to a pipe that has one free end
     When the player deteaches the pipe
     Then the pipe is picked up
+
+Scenario: Player attaches pipe's end to element he is standing on
+    Given the player is on a pump with a pipe
+    When the player attaches the pipe
+    Then the pipe is attached
+
+Scenario: Player attaches pipe's end to element he is standing on but the element has no free end
+    Given the player is on a pump with a pipe that has no free end
+    When the player attaches the pipe
+    Then the pipe is not attached
