@@ -6,4 +6,6 @@ Hozzáadtuk a SonarCloudot a projekthez és beállítottuk a megfelelő opcióit
 
 ## Eredmények és tanulságok
 
-A kód átláthatóbb, karbantarthatóbb és olvashatóbb lett a munka után. Elmélyítettük tudásunkat a clean code elveiben, valamint egyéb code smell-ek felismerésében.
+A kód átláthatóbb, karbantarthatóbb és olvashatóbb lett a munka után. Elmélyítettük tudásunkat a clean code elveiben, valamint egyéb code smell-ek felismerésében. A feladat során rengeteg hibát sikerült kijavítanunk:
+
+![eredmény](sonarcloud-fix-result.png)
