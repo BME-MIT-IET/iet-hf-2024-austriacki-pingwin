@@ -1,4 +1,4 @@
-Feature: Movement
+Feature: Building
     How the game handles the player manipulating the game world.
     
 Scenario: Player places can pick up pump
