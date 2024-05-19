@@ -222,7 +222,6 @@ public class Pump extends ActiveField {
         ArrayList<String> cmds = new ArrayList<>(super.getCommands());
         cmds.add("fix");
         cmds.add("change");
-        cmds.add("damage"); //csak saboteur
         return cmds;
     }
 
